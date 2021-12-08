@@ -764,3 +764,82 @@
 # close_price = [10500, 10300, 10100, 10800, 11000]
 # close_table = dict(zip(date, close_price))
 # print(close_table)
+
+
+
+
+
+# @@@07.파이썬 분기문@@@
+# no.101 파이썬에서 True 혹은 False를 갖는 데이터 타입은 무엇인가?
+# -> bool
+
+
+# no.102 아래 코드의 출력 결과를 예상하라
+# print(3 == 5)
+# -> False
+
+
+# no.103 아래 코드의 출력 결과를 예상하라
+# print(3 < 5)
+# -> True
+
+
+# no.104 아래 코드의 결과를 예상하라.
+# x = 4
+# print(1 < x < 5)
+# -> True
+
+
+# no.105 아래 코드의 결과를 예상하라.
+# print ((3 == 3) and (4 != 3))
+# -> True
+
+
+# no.106 아래 코드에서 에러가 발생하는 원인에 대해 설명하라.
+# print(3 => 4)
+# -> 얼핏보면 단순히 수식이 잘못되어서라고 볼수있겠지만 그런경우라면 False가 뜨지 에러가 뜨지않는다
+#     => 연산자는 존재하지 않는 형태로서 >= 로 사용해야함
+
+
+# no.107 아래 코드의 출력 결과를 예상하라
+# if 4 < 3:
+#     print("Hello World")
+# -> 조건문의 결과가 False 기 때문에 어떤 결과값도 출력되지 않는다
+
+
+# no.108 아래 코드의 출력 결과를 예상하라
+# if 4 < 3:
+#     print("Hello World.")
+# else:
+#     print("Hi, there.")
+# 조건문부가 False 기 때문에 else 구문에 있는 Hi, there만 출력
+
+
+# no.109 아래 코드의 출력 결과를 예상하라
+# if True :
+#     print ("1")
+#     print ("2")
+# else :
+#     print("3")
+# print("4")
+
+# 예상 결과값)
+# 1
+# 2
+# 4
+
+
+# no.110 아래 코드의 출력 결과를 예상하라
+# if True :
+#     if False:
+#         print("1")
+#         print("2")
+#     else:
+#         print("3")
+# else :
+#     print("4")
+# print("5")
+
+# 예상 결과값)
+# 3
+# 5
