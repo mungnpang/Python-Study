@@ -352,5 +352,39 @@
 #             count += 1
 
 #     answer = ("".join(temp))
+
+#     return answer
+
+
+
+# 1~9까지의 오름차순으로 정리된 N개의 원소를 9~1로 내림차순 정렬하기 
+# N = 9
+# n = []
+# for i in range (1,N+1):
+#     n.append(str(i))
+
+# temp = int("".join(n))
+# answer = temp*8 + N
+
+# print(answer)
+
+
+
+# 정해진 예산 안에서 최대한 많은 부서에 예산 분배하기
+# https://programmers.co.kr/learn/courses/30/lessons/12982
+
+# def solution(d, budget):
+#     temp = []
+#     answer = 0
+#     d.sort()
+
+#     for i in d:
+#         if (sum(temp)+i) > budget:
+#             break
+#         else:
+#             temp.append(i)
+
+#     answer = len(temp)
     
 #     return answer
+
