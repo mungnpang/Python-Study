@@ -2126,7 +2126,7 @@ data = [
 #     print("B")
 
 # def message3():
-#     for i in range (3) :
+#     for i in range (3):
 #         message2()
 #         print("C")
 #     message1()
@@ -2140,3 +2140,99 @@ data = [
 # B
 # C
 # A
+
+
+# no.211 함수의 호출 결과를 예측하라.
+# def 함수(문자열):
+#     print(문자열)
+
+# 함수("안녕")
+# 함수("Hi")
+
+# >>>
+# "안녕"
+# "Hi"
+
+
+# no.212 함수의 호출 결과를 예측하라.
+# def 함수(a, b):
+#     print(a + b)
+
+# 함수(3, 4)
+# 함수(7, 8)
+
+# >>>
+# 7
+# 15
+
+
+# no.213 아래와 같은 에러가 발생하는 원인을 설명하라.
+# def 함수(문자열):
+#     print(문자열)
+# 함수()
+# TypeError: 함수() missing 1 required positional argument: '문자열'
+
+# >>> 함수 정의 상 ()안에 어떤 문자열이 입력되어야 실행이 가능한데
+#     아무런 값을 넣어주지않아 에러 발생
+
+
+# no.214 아래와 같은 에러가 발생하는 원인을 설명하라.
+
+# def 함수(a, b):
+#     print(a + b)
+
+# 함수("안녕", 3)
+# TypeError: must be str, not int
+
+# >>> 함수를 정의할 때 가변인자 간의 합연산을 지시했는데 각 인자의
+#     자료형이 달라서 연산이 불가능하다 (둘 다 숫자 or 둘 다 문자여야함)
+
+
+# no.215 하나의 문자를 입력받아 문자열 끝에 ":D" 스마일 문자열을 이어 붙여 출력하는 print_with_smile 함수를 정의하라.
+# def print_with_smile (str):
+#     print (str + ":D")
+
+
+# no.216 215에서 정의한 함수를 호출하라. 파라미터는 "안녕하세요"로 입력하라.
+# >>> print_with_smile("안녕하세요")
+
+
+# no.217 현재 가격을 입력 받아 상한가 (30%)를 출력하는 print_upper_price 함수를 정의하라.
+# def print_upper_price(crt_price):
+#     print(crt_price * 1.3)
+
+
+# no.218 두 개의 숫자를 입력받아 두 수의 합을 출력하는 print_sum 함수를 정의하라.
+# def print_sum(a,b):
+#     print(a + b)
+
+
+# no.219 두 개의 숫자를 입력받아 합/차/곱/나눗셈을 출력하는 print_arithmetic_operation 함수를 작성하라.
+# print_arithmetic_operation(3, 4)
+# 3 + 4 = 7
+# 3 - 4 = -1
+# 3 * 4 = 12
+# 3 / 4 = 0.75
+
+# def print_arithmetic_operation(a, b):
+#     print(a,'+',b,'=',a+b)
+#     print(a,'-',b,'=',a-b)
+#     print(a,'*',b,'=',a*b)
+#     print(a,'/',b,'=',a/b)
+
+
+# no.220 세 개의 숫자를 입력받아 가장 큰수를 출력하는 print_max 함수를 정의하라. 단 if 문을 사용해서 수를 비교하라.
+# def print_max(a,b,c):
+#     if a >= b:
+#         if a >= c:
+#             print(a)
+#         else:
+#             print(c)
+#     else:
+#         if b >= c:
+#             print(b)
+#         else:
+#             print(c)
+
+
+
