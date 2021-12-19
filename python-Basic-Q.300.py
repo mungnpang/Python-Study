@@ -2351,3 +2351,136 @@ data = [
 # >>>
 # 왼쪽: 200
 # 오른쪽: 100
+
+
+# no.231 아래 코드를 실행한 결과를 예상하라.
+# def n_plus_1 (n) :
+#     result = n + 1
+
+# n_plus_1(3)
+# print (result)
+
+# >>> 처음에는 당연히 4가 나오지라고 생각했는데 답지를 보고 아차 싶었다
+#     변수 result를 함수 외에서는 정의하지 않았으므로 에러가 뜨는것...
+#     result를 함수밖에서 별도로 정의해주거나 return형식으로 값을 출력해야한다
+
+
+# no.232 문자열 하나를 입력받아 인터넷 주소를 반환하는 make_url 함수를 정의하라.
+# make_url("naver")
+# www.naver.com
+
+# def make_url(domain):
+#     url = f'www.{domain}.com'
+#     print(url)
+
+# make_url("naver")
+
+
+# no.233 문자열을 입력받아 각 문자들로 구성된 리스트로 반환하는 make_list 함수를 정의하라.
+# make_list("abcd")
+# ['a', 'b', 'c', 'd']
+
+# def make_list(string):
+#     list = []
+#     for i in range(len(string)):
+#         list.append(string[i])
+
+#     return print(list)
+
+# make_list('abcd')
+
+#다 풀고나서 답지를 봤는데,, 좀 허무했다 ㅎㅎ.. return list(string) 한줄이면 될것을 난 왜...
+
+
+# no.234 숫자로 구성된 하나의 리스트를 입력받아, 짝수들을 추출하여 리스트로 반환하는 pickup_even 함수를 구현하라.
+# pickup_even([3, 4, 5, 6, 7, 8])
+# [4, 6, 8]
+
+# def pickup_even(list):
+#     even_list = []
+#     for i in list:
+#         if i % 2 == 0:
+#             even_list.append(i)
+
+#     return print(even_list)
+
+
+# no.235 콤마가 포함된 문자열 숫자를 입력받아 정수로 변환하는 convert_int 함수를 정의하라.
+# convert_int("1,234,567")
+# 1234567
+
+# def convert_int(digit):
+#     return print(int(digit.replace(',','')))
+
+# convert_int("1,234,567")
+
+
+# no.236 아래 코드의 실행 결과를 예측하라.
+# def 함수(num):
+#     return num + 4
+
+# a = 함수(10)
+# b = 함수(a)
+# c = 함수(b)
+# print(c)
+
+# >>> a부터 차례대로 정수형 input, 정수형 output이 나오므로 크게 오류가 날것 같지는 않다
+#     한줄씩 차례대로 결과값을 대입해 나가면 c에는 최종적으로 22가 바인딩 될것이다
+
+
+# no.237 아래 코드의 실행 결과를 예측하라.
+# def 함수(num) :
+#     return num + 4
+
+# c = 함수(함수(함수(10)))
+# print(c)
+
+# >>> 매개 변수들을 쓰지 않았을 뿐 236번 문제와 같은 결과가 나올것이다
+
+
+# no.238 아래 코드의 실행 결과를 예측하라.
+# def 함수1(num) :
+#     return num + 4
+
+# def 함수2(num) :
+#     return num * 10
+
+# a = 함수1(10)
+# c = 함수2(a)
+# print(c)
+
+# >>> 음.. 사실 계산이 어려운 문제는 사실상 없고 함수 진행 과정중에 오류가 날 
+#     구석이 있는지를 찾는 과정인것 같다ㅋㅋㅋ 이대로면 c에는 140이 바인딩 될 것이다
+
+
+# no.239 아래 코드의 실행 결과를 예측하라.
+# def 함수1(num) :
+#     return num + 4
+
+# def 함수2(num) :
+#     num = num + 2
+#     return 함수1(num)
+
+# c = 함수2(10)
+# print(c)
+
+# >>> 조금 복잡해 보일 수 있어도 집중하면 간단하다. 함수2에서 10을 넣었을때의 결과를
+#     다시 함수1에 넣어 돌리기만 하면되므로 사실상 함수1(12)와 같다. 결과는 16일듯
+
+
+# no.240 아래 코드의 실행 결과를 예측하라.
+# def 함수0(num) :
+#     return num * 2
+
+# def 함수1(num) :
+#     return 함수0(num + 2)
+
+# def 함수2(num) :
+#     num = num + 10
+#     return 함수1(num)
+
+# c = 함수2(2)
+# print(c)
+
+# >>> 이전 문제들과 마찬가지로 각 함수를 연쇄적으로 사용할 뿐 천천히만 생각하면 쉽다
+#     함수2(2) -> 함수1(12) -> 함수0(14) -> c = 28 으로 바인딩 될것이다
