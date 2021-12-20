@@ -2313,12 +2313,12 @@ data = [
 # 유알어
 # 걸
 
-# def print_mxn(line, num):
-#     chunk_num = int(len(line) / num)
-#     for x in range(chunk_num + 1) :
-#         print(line[x * num: x * num + num])
+def print_mxn(string, num):
+    line_num = int(len(string) / num)
+    for i in range(line_num + 1) :
+        print(string[(i*num):(i*num)+num])
 
-
+print_mxn("아이엠어보이유알어걸", 3)
 # no.228 연봉을 입력받아 월급을 계산하는 calc_monthly_salary(annual_salary) 함수를 정의하라. 회사는 연봉을 12개월로 나누어 분할 지급하며, 이 때 1원 미만은 버림한다.
 # calc_monthly_salary(12000000)
 # 1000000
