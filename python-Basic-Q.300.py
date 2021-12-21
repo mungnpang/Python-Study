@@ -2313,12 +2313,14 @@ data = [
 # 유알어
 # 걸
 
-def print_mxn(string, num):
-    line_num = int(len(string) / num)
-    for i in range(line_num + 1) :
-        print(string[(i*num):(i*num)+num])
+# def print_mxn(string, num):
+#     line_num = int(len(string) / num)
+#     for i in range(line_num + 1) :
+#         print(string[(i*num):(i*num)+num])
 
-print_mxn("아이엠어보이유알어걸", 3)
+# print_mxn("아이엠어보이유알어걸", 3)
+
+
 # no.228 연봉을 입력받아 월급을 계산하는 calc_monthly_salary(annual_salary) 함수를 정의하라. 회사는 연봉을 12개월로 나누어 분할 지급하며, 이 때 1원 미만은 버림한다.
 # calc_monthly_salary(12000000)
 # 1000000
@@ -2484,3 +2486,110 @@ print_mxn("아이엠어보이유알어걸", 3)
 
 # >>> 이전 문제들과 마찬가지로 각 함수를 연쇄적으로 사용할 뿐 천천히만 생각하면 쉽다
 #     함수2(2) -> 함수1(12) -> 함수0(14) -> c = 28 으로 바인딩 될것이다
+
+
+
+
+
+# @@@10.파이썬 모듈@@@
+# no.241 datetime 모듈을 사용해서 현재 시간을 화면에 출력해보세요.
+
+# import datetime
+
+# now = datetime.datetime.now()
+# print(now)
+
+
+# no.242 datetime 모듈의 now 함수의 리턴 값의 타입을 화면에 출력해보세요.
+
+# import datetime
+
+# now = datetime.datetime.now()
+# print(type(now))
+
+
+# no.243 datetime 모듈의 timedelta를 사용해서 오늘로부터 5일, 4일, 3일, 2일, 1일 전의 날짜를 화면에 출력해보세요.
+
+# import datetime
+
+# now = datetime.datetime.now()
+
+# for day in range(5, 0, -1):
+#     delta = datetime.timedelta(days=day)
+#     date = now - delta
+#     print(date)
+
+
+# no.244 현재시간을 얻어온 후 다음과 같은 포맷으로 시간을 출력해보세요. strftime 메서드를 사용하세요.
+# ex) 18:35:01 
+
+# import datetime
+
+# now = datetime.datetime.now()
+# print(now.strftime("%H:%M:%S"))
+
+
+# no.245 datetime.datetime.strptime 메서드를 사용하면 문자열 형식의 시간을 datetime.datetime 타입의 시간 값으로 만들어줍니다. "2020-05-04"의 문자열을 시간 타입으로 변환해보세요.
+
+# import datetime
+
+# day = "2020-05-04"
+# ret = datetime.datetime.strptime(day, "%Y-%m-%d")
+# print(ret, type(ret))
+
+
+# no.246 time 모듈, datetime 모듈을 사용해서 1초에 한 번 현재 시간을 출력하는 코드를 작성하세요.
+
+# import time
+# import datetime
+
+# while True:
+#     now = datetime.datetime.now()
+#     print(now)
+#     time.sleep(1)
+
+
+# no.247 모듈을 임포트하는 4가지 방식에 대해 설명해보세요.
+
+# 1. import 모듈명
+# -> 가장 기본적인 import 방식
+
+# 2. from 모듈명 import 함수명
+# -> 특정 모듈에서 일부 함수만을 가져오고 싶을 때 사용
+
+# 3. from 모듈명 import *
+# -> 특정 모듈에 있는 모든 함수를 가져올 때 사용
+
+# 4. import 모듈명 as 내가 사용할 이름
+# -> 가져온 모듈을 내가 사용하기 편한 이름으로 바꿔 쓰고 싶을때 사용
+# ex) import combinations as C
+
+
+# no.248 os 모듈의 getcwd 함수를 호출하여 현재 디렉터리의 경로를 화면에 출력해보세요.
+
+# import os
+# ret = os.getcwd()
+# print(ret, type(ret))
+
+
+# no.249 바탕화면에 텍스트 파일을 하나 생성한 후 os 모듈의 rename 함수를 호출하여 해당 파일의 이름을 변경해보세요.
+
+# import os
+# os.rename("C:/Users/User/Desktop/sparta.txt", "C:/Users/User/Desktop/codingclub.txt")
+# >>> 잘 모르겠당...
+
+
+# no.250 numpy 모듈의 arange 함수를 사용해서 0.0 부터 5.0까지 0.1씩 증가하는 값을 화면에 출력해보세요.
+
+# import numpy
+
+# for i in numpy.arange(0, 5, 0.1):
+#     print(i)
+
+
+
+
+
+@@@11.파이썬 클래스@@@
+no.251 클래스, 객체, 인스턴스에 대해 설명해봅시다.
+
