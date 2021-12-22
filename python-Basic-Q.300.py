@@ -1871,11 +1871,11 @@
 
 # no.191 data에는 매수한 종목들의 OHLC (open/high/low/close) 가격 정보가 바인딩 되어있다.
 
-data = [
-    [ 2000,  3050,  2050,  1980],
-    [ 7500,  2050,  2050,  1980],
-    [15450, 15050, 15550, 14900]
-]
+# data = [
+#     [ 2000,  3050,  2050,  1980],
+#     [ 7500,  2050,  2050,  1980],
+#     [15450, 15050, 15550, 14900]
+# ]
 
 # 수수료를 0.014 %로 가정할 때, 각 가격에 수수료를 포함한 가격을 한라인에 하나씩 출력하라.
 # 2000.28
@@ -2590,6 +2590,131 @@ data = [
 
 
 
-@@@11.파이썬 클래스@@@
-no.251 클래스, 객체, 인스턴스에 대해 설명해봅시다.
+# @@@11.파이썬 클래스@@@
+# no.251 클래스, 객체, 인스턴스에 대해 설명해봅시다.
+# 클래스: 어떠한 객체를 정의하고 만들기위한 변수+메서드의 집합 / 틀에 비유
+# 객체: 틀에 의해서 만들어진 하나의 와플 
+# 인스턴스: 특정 객체가 어떤 클래스의 객체인지 관계를 중점으로 표현할때 사용, 부모-자식 / 클래스 - 인스턴스
 
+
+# no.252 비어있는 사람 (Human) 클래스를 "정의" 해보세요.
+
+# class Human():
+#     pass
+
+
+# no.253 사람 (Human) 클래스의 인스턴스를 "생성" 하고 이를 areum 변수로 바인딩해보세요.
+
+# class Human():
+#     pass
+
+# areum = Human()
+
+
+# no.254 사람 (Human) 클래스에 "응애응애"를 출력하는 생성자를 추가하세요.
+
+# class Human():
+#     def __init__(self):
+#         print('응애응애')
+
+# areum = Human()
+
+
+# no.255 사람 (Human) 클래스에 (이름, 나이, 성별)을 받는 생성자를 추가하세요.
+
+# class Human():
+#     def __init__(self, name, age, sex):
+#         self.name = name
+#         self.age = age
+#         self.sex = sex
+
+# areum = Human("아름", 25, "여자")
+# print(areum.name, areum.age, areum.sex)
+
+
+# no.256 255에서 생성한 인스턴스의 이름, 나이, 성별을 출력하세요. 인스턴스 변수에 접근하여 값을 출력하면 됩니다.
+
+# class Human():
+#     def __init__(self, name, age, sex):
+#         self.name = name
+#         self.age = age
+#         self.sex = sex
+
+# areum = Human("조아름", 25, "여자")
+# print(f'이름: {areum.name}, 나이: {areum.age}, 성별: {areum.sex}')
+
+
+# no.257 사람 (Human) 클래스에서 이름, 나이, 성별을 출력하는 who() 메소드를 추가하세요.
+
+# class Human():
+#     def __init__(self, name, age, sex):
+#         self.name = name
+#         self.age = age
+#         self.sex = sex
+
+#     def who(self):
+#         print(f'이름: {self.name}, 나이: {self.age}, 성별: {self.sex}')
+
+# areum = Human('조아름', 25, '여자')
+# areum.who()
+
+
+# no.258 사람 (Human) 클래스에 (이름, 나이, 성별)을 받는 setInfo 메소드를 추가하세요.
+
+# class Human():
+#     def __init__(self, name, age, sex):
+#         self.name = name
+#         self.age = age
+#         self.sex = sex
+
+#     def who(self):
+#         print(f'이름: {self.name}, 나이: {self.age}, 성별: {self.sex}')
+
+#     def setInfo(self,name,age,sex):
+#         self.name = name
+#         self.age = age
+#         self.sex = sex
+
+# areum = Human('모름', 25, '모름')
+# areum.who()
+
+# areum.setInfo('조아름', 25, '여자')
+# areum.who()
+
+
+# no.259 사람 (human) 클래스에 "나의 죽음을 알리지 말라"를 출력하는 소멸자를 추가하세요.
+
+# class Human:
+#     def __init__(self, name, age, sex):
+#         self.name = name
+#         self.age = age
+#         self.sex = sex
+
+#     def __del__(self):
+#         print("나의 죽음을 알리지마라")
+
+#     def who(self):
+#         print("이름: {} 나이: {} 성별: {}".format(self.name, self.age, self.sex))
+
+#     def setInfo(self, name, age, sex):
+#         self.name = name
+#         self.age = age
+#         self.sex = sex
+
+# areum = Human("아름", 25, "여자")
+# del(areum)
+# areum.who()
+
+
+# no.260 아래와 같은 에러가 발생한 원인에 대해 설명하세요.
+
+class OMG:
+    def print():
+        print("Oh my god")
+
+mystock = OMG()
+mystock.print() 
+
+# >>>
+# 클래스로 호출되어 불려갔을때 파라미터로 사용될 값이 없기때문에 문제 발생
+# def print(self)로 바꿔주면 정상적으로 작동
