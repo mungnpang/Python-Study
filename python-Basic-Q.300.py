@@ -2575,7 +2575,7 @@
 # no.249 바탕화면에 텍스트 파일을 하나 생성한 후 os 모듈의 rename 함수를 호출하여 해당 파일의 이름을 변경해보세요.
 
 # import os
-# os.rename("C:/Users/User/Desktop/sparta.txt", "C:/Users/User/Desktop/codingclub.txt")
+# os.rename("C:\\Users\\User\\Desktop\\sparta.txt", "C:\\Users\\User\\Desktop\\codingclub.txt")
 # >>> 잘 모르겠당...
 
 
@@ -2708,13 +2708,713 @@
 
 # no.260 아래와 같은 에러가 발생한 원인에 대해 설명하세요.
 
-class OMG:
-    def print():
-        print("Oh my god")
+# class OMG:
+#     def print():
+#         print("Oh my god")
 
-mystock = OMG()
-mystock.print() 
+# mystock = OMG()
+# mystock.print()    # OMG.print(mystock)
 
 # >>>
 # 클래스로 호출되어 불려갔을때 파라미터로 사용될 값이 없기때문에 문제 발생
 # def print(self)로 바꿔주면 정상적으로 작동
+
+
+# no.261 주식 종목에 대한 정보를 저장하는 Stock 클래스를 정의해보세요. 클래스는 속성과 메서드를 갖고 있지 않습니다.
+
+# class Stock:
+#     pass
+
+
+# no.262 Stock 클래스의 객체가 생성될 때 종목명과 종목코드를 입력 받을 수 있도록 생성자를 정의해보세요.
+
+# class Stock():
+#     def __init__(self,name,code):
+#         self.name = name
+#         self.code = code
+
+# samsung = Stock('삼성전자', '005930')
+# print (samsung.name, samsung.code)
+
+
+# no.263 객체에 종목명을 입력할 수 있는 set_name 메서드를 추가해보세요.
+
+# class Stock():
+#     def __init__(self,name,code):
+#         self.name = name
+#         self.code = code
+
+#     def set_name(self,name):
+#         self.name = name
+
+# a = Stock(None,None)
+# print(a.name,a.code)
+# a.set_name('삼성전자')
+# print(a.name)
+
+
+# no.264 객체에 종목코드를 입력할 수 있는 set_code 메서드를 추가해보세요.
+
+# class Stock():
+#     def __init__(self,name,code):
+#         self.name = name
+#         self.code = code
+
+#     def set_name(self,name):
+#         self.name = name
+
+#     def set_code(self,code):
+#         self.code = code
+
+# a = Stock(None, None)
+# a.set_code("005930")
+# print(a.code)
+
+
+# no.265 종목명과 종목코드를 리턴하는 get_name, get_code 메서드를 추가하세요. 해당 메서드를 사용하여 종목명과 종목코드를 얻고 이를 출력해보세요.
+
+# class Stock:
+#     def __init__(self, name, code):
+#         self.name = name
+#         self.code = code
+
+#     def set_name(self, name):
+#         self.name = name
+
+#     def set_code(self, code):
+#         self.code = code
+
+#     def get_name(self):
+#         return self.name
+
+#     def get_code(self):
+#         return self.code
+
+# 삼성 = Stock("삼성전자", "005930")
+# print(삼성.get_name(), 삼성.get_code())
+
+
+# no.266 생성자에서 종목명, 종목코드, PER, PBR, 배당수익률을 입력 받을 수 있도록 생성자를 수정하세요. PER, PBR, 배당수익률은 float 타입입니다.
+
+# class Stock:
+#     def __init__(self, name, code, PER, PBR, 배당수익률):
+#         self.name = name
+#         self.code = code
+#         self.PER = PER
+#         self.PBR = PBR
+#         self.배당수익률 = 배당수익률
+
+#     def set_name(self, name):
+#         self.name = name
+
+#     def set_code(self, code):
+#         self.code = code
+
+#     def get_name(self):
+#         return self.name
+
+#     def get_code(self):
+#         return self.code
+
+
+# no.267 266번에서 정의한 생성자를 통해 다음 정보를 갖는 객체를 생성해보세요.
+
+# class Stock:
+#     def __init__(self, name, code, PER, PBR, 배당수익률):
+#         self.name = name
+#         self.code = code
+#         self.PER = PER
+#         self.PBR = PBR
+#         self.배당수익률 = 배당수익률
+
+#     def set_name(self, name):
+#         self.name = name
+
+#     def set_code(self, code):
+#         self.code = code
+
+#     def get_name(self):
+#         return self.name
+
+#     def get_code(self):
+#         return self.code
+
+# samsung = Stock('삼성전자','005930',15.79,1.33,2.83)
+# print(samsung.name, samsung.code, samsung.PER, samsung.PBR, samsung.배당수익률)
+
+
+# no.268 PER, PBR, 배당수익률은 변경될 수 있는 값입니다. 이 값을 변경할 때 사용하는 set_per, set_pbr, set_dividend 메서드를 추가하세요.
+
+# class Stock:
+#     def __init__(self, name, code, PER, PBR, dividend):
+#         self.name = name
+#         self.code = code
+#         self.PER = PER
+#         self.PBR = PBR
+#         self.dividend = dividend
+
+#     def set_name(self, name):
+#         self.name = name
+
+#     def set_code(self, code):
+#         self.code = code
+
+#     def set_PER(self, PER):
+#         self.PER = PER
+
+#     def set_PBR(self, PBR):
+#         self.PBR = PBR
+
+#     def set_dividend(self, dividend):
+#         self.dividend = dividend
+
+
+# no.269 267번에서 생성한 객체에 set_per 메서드를 호출하여 per 값을 12.75로 수정해보세요.
+
+# class Stock:
+#     def __init__(self, name, code, PER, PBR, dividend):
+#         self.name = name
+#         self.code = code
+#         self.PER = PER
+#         self.PBR = PBR
+#         self.dividend = dividend
+
+#     def set_name(self, name):
+#         self.name = name
+
+#     def set_code(self, code):
+#         self.code = code
+
+#     def set_PER(self, PER):
+#         self.PER = PER
+
+#     def set_PBR(self, PBR):
+#         self.PBR = PBR
+
+#     def set_dividend(self, dividend):
+#         self.dividend = dividend
+
+# samsung = Stock('삼성전자','005930',15.79,1.33,2.83)
+# print(samsung.PER)
+# samsung.set_PER(12.75)
+# print(samsung.PER)
+
+
+# no.270 아래의 표를 참조하여 3종목에 대해 객체를 생성하고 이를 파이썬 리스트에 저장하세요.
+#        파이썬 리스트에 저장된 각 종목에 대해 for 루프를 통해 종목코드와 PER을 출력해보세요.
+
+# class Stock:
+#     def __init__(self, name, code, PER, PBR, dividend):
+#         self.name = name
+#         self.code = code
+#         self.PER = PER
+#         self.PBR = PBR
+#         self.dividend = dividend
+
+#     def set_name(self, name):
+#         self.name = name
+
+#     def set_code(self, code):
+#         self.code = code
+
+#     def set_PER(self, PER):
+#         self.PER = PER
+
+#     def set_PBR(self, PBR):
+#         self.PBR = PBR
+
+#     def set_dividend(self, dividend):
+#         self.dividend = dividend
+
+# Samsung = Stock('삼성전자','005930',15.79,1.33,2.83)
+# Hyundai = Stock('현대차','005380',8.70,0.35,4.27)
+# LG = Stock('LG전자','066570',317.34,0.69,1.37)
+
+# companies = [Samsung, Hyundai, LG]
+
+# for company in companies:
+#     print(company.code, company.PER)
+
+
+# no.271 은행에 가서 계좌를 개설하면 은행이름, 예금주, 계좌번호, 잔액이 설정됩니다.
+#        Account 클래스를 생성한 후 생성자를 구현해보세요. 생성자에서는 예금주와 초기 잔액만 입력 받습니다.
+#        은행이름은 SC은행으로 계좌번호는 3자리-2자리-6자리 형태로 랜덤하게 생성됩니다.
+
+# import random
+
+# class Account():
+#     def __init__(self,name,balance):
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+#         num1 = random.randint(0,999)
+#         num2 = random.randint(0,99)
+#         num3 = random.randint(0,999999)
+
+#         num1 = str(num1).zfill(3)      # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+        # self.account_number = f'{num1}-{num2}-{num3}'  # 001-01-000001
+
+# jacob = Account("김재명", '10000원')
+# print(jacob.name, jacob.balance, jacob.bank, jacob.account_number)
+
+
+# no.272 클래스 변수를 사용해서 Account 클래스로부터 생성된 계좌 객체의 개수를 저장하세요.
+
+# import random
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)      # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+        # self.account_number = f'{num1}-{num2}-{num3}'  # 001-01-000001
+
+#         Account.account_count += 1
+
+
+# kim = Account("김민수", 100)
+# print(Account.account_count)
+# lee = Account("이민수", 100)
+# print(Account.account_count)
+# jacob = Account("김재명", '10000원')
+# print(Account.account_count)
+
+
+# no.273 Account 클래스로부터 생성된 계좌의 개수를 출력하는 get_account_num() 메서드를 추가하세요.
+
+# import random
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)      # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#         self.account_number = f'{num1}-{num2}-{num3}'  # 001-01-000001
+
+#         Account.account_count += 1
+
+
+#     def get_account_num(cls):
+#         print(cls.account_count)
+
+
+# kim = Account("김민수", 100)
+# lee = Account("이민수", 100)
+# jacob = Account("김재명", '10000원')
+# jacob.get_account_num()
+
+
+# no.274 Account 클래스에 입금을 위한 deposit 메서드를 추가하세요. 입금은 최소 1원 이상만 가능합니다.
+
+# import random
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = int(balance)
+#         self.bank = "SC은행"
+
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)      # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#         self.account_number = f'{num1}-{num2}-{num3}'  # 001-01-000001
+
+#         Account.account_count += 1
+
+
+#     def get_account_num(cls):
+#         print(cls.account_count)
+
+#     def deposit(self,balance):
+#         if balance >= 1:
+#             self.balance += int(balance)
+
+# jacob = Account('재명','10000')
+# jacob.deposit(50000)
+# print(jacob.balance)
+
+
+# no.275 Account 클래스에 출금을 위한 withdraw 메서드를 추가하세요. 출금은 계좌의 잔고 이상으로 출금할 수는 없습니다.
+
+# import random
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = int(balance)
+#         self.bank = "SC은행"
+
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)      # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#         self.account_number = f'{num1}-{num2}-{num3}'  # 001-01-000001
+
+#         Account.account_count += 1
+
+
+#     def get_account_num(cls):
+#         print(cls.account_count)
+
+#     def deposit(self,balance):
+#         if balance >= 1:
+#             self.balance += int(balance)
+
+#     def withdraw(self,amount):
+#         if self.balance - amount >= 0:
+#             self.balance -= amount
+#         else:
+#             print('한도 초과입니다')
+
+# jacob = Account('재명','50000')
+# jacob.withdraw(60000)
+# print(jacob.balance)
+
+
+# no.276 Account 인스턴스에 저장된 정보를 출력하는 display_info() 메서드를 추가하세요. 잔고는 세자리마다 쉼표를 출력하세요.
+
+# 은행이름: SC은행
+# 예금주: 파이썬
+# 계좌번호: 111-11-111111
+# 잔고: 10,000원
+
+# import random
+
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+
+#         # 3-2-6
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)  # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)  # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)  # 1 -> '1' -> '0000001'
+#         self.account_number = f'{num1}-{num2}-{num3}'  # 001-01-000001
+#         Account.account_count += 1
+
+#     @classmethod
+#     def get_account_num(cls):
+#         print(cls.account_count)  # Account.account_count
+
+#     def deposit(self, amount):
+#         if amount >= 1:
+#             self.balance += amount
+
+#     def withdraw(self, amount):
+#         if self.balance > amount:
+#             self.balance -= amount
+#         else:
+#             print('한도 초과입니다')
+
+#     def display_info(self):
+#         print("은행이름: ", self.bank)
+#         print("예금주: ", self.name)
+#         print("계좌번호: ", self.account_number)
+#         print("잔고: ", self.balance)
+
+
+# jacob = Account("재명", 10000)
+# jacob.display_info()
+
+
+# no.277 입금 횟수가 5회가 될 때 잔고를 기준으로 1%의 이자가 잔고에 추가되도록 코드를 변경해보세요.
+
+# import random
+
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.deposit_count = 0
+
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+
+#         # 3-2-6
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)  # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)  # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)  # 1 -> '1' -> '0000001'
+#         self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#         Account.account_count += 1
+
+#     @classmethod
+#     def get_account_num(cls):
+#         print(cls.account_count)  # Account.account_count
+
+#     def deposit(self, amount):
+#         if amount >= 1:
+#             self.balance += amount
+
+#             self.deposit_count += 1
+#             if self.deposit_count % 5 == 0:         # 5, 10, 15
+#                 # 이자 지금
+#                 self.balance = (self.balance * 1.01)
+
+
+#     def withdraw(self, amount):
+#         if self.balance > amount:
+#             self.balance -= amount
+
+#     def display_info(self):
+#         print("은행이름: ", self.bank)
+#         print("예금주: ", self.name)
+#         print("계좌번호: ", self.account_number)
+#         print("잔고: ", self.balance)
+
+# jacob = Account("재명", 10000)
+# jacob.deposit(10000)
+# jacob.deposit(10000)
+# jacob.deposit(10000)
+# jacob.deposit(5000)
+# jacob.deposit(5000)
+# print(jacob.balance)
+
+
+# no.278 Account 클래스로부터 3개 이상 인스턴스를 생성하고 생성된 인스턴스를 리스트에 저장해보세요.
+
+# import random
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.deposit_count = 0
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+
+#         # 3-2-6
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)  # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)  # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)  # 1 -> '1' -> '0000001'
+#         self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#         Account.account_count += 1
+
+#     @classmethod
+#     def get_account_num(cls):
+#         print(cls.account_count)  # Account.account_count
+
+#     def deposit(self, amount):
+#         if amount >= 1:
+#             self.balance += amount
+
+#             self.deposit_count += 1
+#             if self.deposit_count % 5 == 0:         # 5, 10, 15
+#                 # 이자 지금
+#                 self.balance = (self.balance * 1.01)
+
+
+#     def withdraw(self, amount):
+#         if self.balance > amount:
+#             self.balance -= amount
+
+#     def display_info(self):
+#         print("은행이름: ", self.bank)
+#         print("예금주: ", self.name)
+#         print("계좌번호: ", self.account_number)
+#         print("잔고: ", self.balance)
+
+# jacob = Account("재명", 50000)
+# jin = Account("우진",100000)
+# jun = Account("준", 70000)
+
+# Accounts = [jacob,jin,jun]
+
+# for account in Accounts:
+#     account.display_info()
+
+
+# no.279 반복문을 통해 리스트에 있는 객체를 순회하면서 잔고가 100만원 이상인 고객의 정보만 출력하세요.
+
+# import random
+
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.deposit_count = 0
+
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+
+#         # 3-2-6
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)  # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)  # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)  # 1 -> '1' -> '0000001'
+#         self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#         Account.account_count += 1
+
+#     @classmethod
+#     def get_account_num(cls):
+#         print(cls.account_count)  # Account.account_count
+
+#     def deposit(self, amount):
+#         if amount >= 1:
+#             self.balance += amount
+
+#             self.deposit_count += 1
+#             if self.deposit_count % 5 == 0:         # 5, 10, 15
+#                 # 이자 지금
+#                 self.balance = (self.balance * 1.01)
+
+
+#     def withdraw(self, amount):
+#         if self.balance > amount:
+#             self.balance -= amount
+
+#     def display_info(self):
+#         print("은행이름: ", self.bank)
+#         print("예금주: ", self.name)
+#         print("계좌번호: ", self.account_number)
+#         print("잔고: ", self.balance)
+
+# jacob = Account("재명", 900000)
+# jin = Account("우진",1000000)
+# jun = Account("준", 7000000)
+
+# Accounts = [jacob,jin,jun]
+
+# for account in Accounts:
+#     if account.balance >= 1000000:
+#         account.display_info()
+
+
+# no.280 입금과 출금 내역이 기록되도록 코드를 업데이트 하세요. 입금 내역과 출금 내역을 출력하는 deposit_history와 withdraw_history 메서드를 추가하세요.
+
+# import random
+
+
+# class Account:
+#     # class variable
+#     account_count = 0
+
+#     def __init__(self, name, balance):
+#         self.deposit_count = 0
+#         self.deposit_log = []
+#         self.withdraw_log = []
+
+#         self.name = name
+#         self.balance = balance
+#         self.bank = "SC은행"
+
+#         # 3-2-6
+#         num1 = random.randint(0, 999)
+#         num2 = random.randint(0, 99)
+#         num3 = random.randint(0, 999999)
+
+#         num1 = str(num1).zfill(3)  # 1 -> '1' -> '001'
+#         num2 = str(num2).zfill(2)  # 1 -> '1' -> '01'
+#         num3 = str(num3).zfill(6)  # 1 -> '1' -> '0000001'
+#         self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#         Account.account_count += 1
+
+#     @classmethod
+#     def get_account_num(cls):
+#         print(cls.account_count)  # Account.account_count
+
+#     def deposit(self, amount):
+#         if amount >= 1:
+#             self.deposit_log.append(amount)
+#             self.balance += amount
+
+#             self.deposit_count += 1
+#             if self.deposit_count % 5 == 0:         # 5, 10, 15
+#                 # 이자 지금
+#                 self.balance = (self.balance * 1.01)
+
+
+#     def withdraw(self, amount):
+#         if self.balance > amount:
+#             self.withdraw_log.append(amount)
+#             self.balance -= amount
+
+#     def display_info(self):
+#         print("은행이름: ", self.bank)
+#         print("예금주: ", self.name)
+#         print("계좌번호: ", self.account_number)
+#         print("잔고: ", self.balance)
+
+#     def withdraw_history(self):
+#         for amount in self.withdraw_log:
+#             print(f'출금내역: -{amount}')
+
+#     def deposit_history(self):
+#         for amount in self.deposit_log:
+#             print(f'입금내역: +{amount}')
+
+
+# jacob = Account("재명", 10000)
+
+# jacob.deposit(10000)
+# jacob.deposit(20000)
+# jacob.deposit(30000)
+# jacob.deposit_history()
+
+# jacob.withdraw(10000)
+# jacob.withdraw(20000)
+# jacob.withdraw_history()
