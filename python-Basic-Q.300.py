@@ -3418,3 +3418,365 @@
 # jacob.withdraw(10000)
 # jacob.withdraw(20000)
 # jacob.withdraw_history()
+
+
+# no.281 다음 코드가 동작하도록 차 클래스를 정의하세요.
+# >> car = 차(2, 1000)
+# >> car.바퀴
+# 2
+# >> car.가격
+# 1000
+
+# class 차():
+#         def __init__(self,바퀴,가격):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+
+# car = 차(2, 1000)
+# print(car.바퀴)
+# print(car.가격)
+
+
+# no.282 차 클래스를 상속받은 자전차 클래스를 정의하세요. 단 자전차 클래스는 차 클래스를 상속받습니다.
+
+# >> bicycle = 자전차(2, 100)
+# >> bicycle.가격
+# 100
+
+# class 차():
+#         def __init__(self,바퀴,가격):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+
+# class 자전차(차):
+#         def __init__(self,바퀴,가격):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+
+# bicycle = 자전차(2, 100)
+# print(bicycle.가격)
+
+
+# no.284. 다음 코드가 동작하도록 자전차 클래스를 정의하세요. 단 자전차 클래스는 차 클래스를 상속받습니다.
+
+# >> bicycle = 자전차(2, 100, "시마노")
+# >> bicycle.구동계
+# 시마노
+
+# class 차():
+#         def __init__(self,바퀴,가격):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+
+# class 자전차(차):
+#         def __init__(self,바퀴,가격,구동계):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+#                 self.구동계 = 구동계
+
+# bicycle = 자전차(2, 100, '시마노')
+# print(bicycle.구동계)
+
+
+# no.285 다음 코드가 동작하도록 차 클래스를 상속받는 자동차 클래스를 정의하세요.
+
+# >> car = 자동차(4, 1000)
+# >> car.정보()
+# 바퀴수 4
+# 가격 1000
+
+# class 차():
+#         def __init__(self,바퀴,가격):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+
+# class 자전차(차):
+#         def __init__(self,바퀴,가격):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+
+# class 자동차(차):
+#         def __init__(self,바퀴,가격):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+
+#         def 정보(self):
+#                 print(f'바퀴수 {self.바퀴}')
+#                 print(f'가격 {self.가격}')
+
+# car = 자동차(4, 1000)
+# car.정보()
+
+
+# no.286 다음 코드가 동작하도록 자전차 클래스를 수정하세요.
+
+# >> bicycle = 자전차(2, 100, "시마노")
+# >> bicycle.정보()
+# 바퀴수 2
+# 가격 100
+
+# class 차():
+#         def __init__(self,바퀴,가격,구동계):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+#                 self.구동계 = 구동계
+
+# class 자전차(차):
+#         def __init__(self,바퀴,가격,구동계):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+#                 self.구동계 = 구동계
+
+#         def 정보(self):
+#                 print(f'바퀴수 {self.바퀴}')
+#                 print(f'가격 {self.가격}')
+
+# bicycle = 자전차(2, 100, '시마노')
+# bicycle.정보()
+
+
+# no.287 자전차의 정보() 메서드로 구동계 정보까지 출력하도록 수정해보세요.
+
+# >> bicycle = 자전차(2, 100, "시마노")
+# >> bicycle.정보()
+# 바퀴수 2
+# 가격 100
+# 구동계 시마노
+
+# class 차():
+#         def __init__(self,바퀴,가격,구동계):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+#                 self.구동계 = 구동계
+
+# class 자전차(차):
+#         def __init__(self,바퀴,가격,구동계):
+#                 self.바퀴= 바퀴
+#                 self.가격 = 가격
+#                 self.구동계 = 구동계
+
+#         def 정보(self):
+#                 print(f'바퀴수 {self.바퀴}')
+#                 print(f'가격 {self.가격}')
+#                 print(f'구동계 {self.구동계}')
+
+# bicycle = 자전차(2, 100, '시마노')
+# bicycle.정보()
+
+
+# no.288 다음 코드의 실행 결과를 예상해보세요.
+
+# class 부모:
+#         def 호출(self):
+#                 print("부모호출")
+
+# class 자식(부모):
+#         def 호출(self):
+#                 print("자식호출")
+        
+# 나 = 자식()
+# 나.호출()
+
+# >>> '자식호출'이 출력될 것이다
+
+
+# no.289 다음 코드의 실행 결과를 예상해보세요.
+
+# class 부모:
+#         def __init__(self):
+#                 print("부모생성")
+
+# class 자식(부모):
+#         def __init__(self):
+#                 print("자식생성")
+
+# 나 = 자식()
+
+# >>> '자식생성'이 호출될 것이다
+
+
+# no.290 다음 코드의 실행 결과를 예상해보세요.
+
+# class 부모:
+#         def __init__(self):
+#                 print("부모생성")
+
+# class 자식(부모):
+#         def __init__(self):
+#                 print("자식생성")
+#                 super().__init__()
+
+# 나 = 자식()
+
+# >>> '자식생성' 호출이후 super().__init__() <부모의 __init__ 함수>를 호출했으므로
+#     '부모생성'을 마저 출력할 것이다
+
+
+# no.291 바탕화면에 '매수종목1.txt' 파일을 생성한 후 다음과 같이 종목코드를 파일에 써보세요.
+
+# 005930
+# 005380
+# 035420
+
+# f = open("C:/Users/user/Desktop/매수종목1.txt", mode="wt", encoding="utf-8")
+# f.write("005930\n")
+# f.write("005380\n")
+# f.write("035420")
+# f.close()
+
+
+# no.292 바탕화면에 '매수종목2.txt' 파일을 생성한 후 다음과 같이 종목코드와 종목명을 파일에 써보세요.
+
+# 005930 삼성전자
+# 005380 현대차
+# 035420 NAVER
+
+# f = open("C:/Users/user/Desktop/매수종목2.txt", mode="wt", encoding="utf-8")
+# f.write("005930 삼성전자\n")
+# f.write("005380 현대차\n")
+# f.write("035420 NAVER")
+# f.close()
+
+
+# no.293 바탕화면에 '매수종목.csv' 파일을 생성한 후 다음과 같이 종목코드와 종목명을 파일에 써보세요. 인코딩은 'cp949'를 사용해야합니다.
+
+# >>> 내 답
+# f = open("C:/Users/user/Desktop/매수종목.csv", mode="wt", encoding="cp949")
+# f.write("종목명\t""종목코드\t""PER\n")
+# f.write("삼성전자\t""005930\t""15.79\n")
+# f.write("NAVER\t""035420\t""55.82")
+# f.close()
+
+# >>> 답안지
+# import csv
+
+# f = open("C:/Users/user/Desktop/매수종목.csv", mode="wt", encoding="cp949", newline='')
+# writer = csv.writer(f)
+# writer.writerow(["종목명", "종목코드", "PER"])
+# writer.writerow(["삼성전자", "005930", 15.59])
+# writer.writerow(["NAVER", "035420", 55.82])
+# f.close()
+
+
+# no.294 바탕화면에 생성한 '매수종목1.txt' 파일을 읽은 후 종목코드를 리스트에 저장해보세요.
+
+# 005930
+# 005380
+# 035420
+
+# f = open("C:/Users/user/Desktop/매수종목1.txt", encoding="utf-8")
+# lines = f.readlines()   # python list
+
+# codes = []
+# for line in lines:
+#     code = line.strip()  #'\n'
+#     codes.append(code)
+
+# print(codes)
+
+# f.close()
+
+
+# no.295 바탕화면에 생성한 '매수종목2.txt' 파일을 읽은 후 종목코드와 종목명을 딕셔너리로 저장해보세요. 종목명을 key로 종목명을 value로 저장합니다.
+
+# 005930 삼성전자
+# 005380 현대차
+# 035420 NAVER
+
+# f = open("C:/Users/user/Desktop/매수종목2.txt", encoding="utf-8")
+# lines = f.readlines()
+
+# data = {}
+# for line in lines:
+#     line = line.strip()     # '\n' 제거
+#     k, v = line.split()
+#     #print(k, v)
+#     data[k] = v
+
+# print(data)
+# f.close()
+
+
+# no.296 문자열 PER (Price to Earning Ratio) 값을 실수로 변환할 때 에러가 발생합니다. 예외처리를 통해 에러가 발생하는 PER은 0으로 출력하세요.
+
+# per = ["10.31", "", "8.00"]
+
+# for i in per:
+#     try:
+#         print(float(i))
+#     except:
+#         print(0)
+
+
+# no.297 문자열로 표현된 PER 값을 실수로 변환한 후 이를 새로운 리스트에 저장해보세요.
+
+# per = ["10.31", "", "8.00"]
+# new_per = []
+# for i in per:
+#     try:
+#         new_per.append(float(i))
+#     except:
+#         new_per.append(0)
+
+
+# no.298 어떤 값을 0으로 나누면 ZeroDivisionError 에러가 발생합니다. try ~ except로 모든 에러에 대해 예외처리하지 말고 ZeroDivisionError 에러만 예외처리해보세요.
+
+# try:
+#     a = 7 / 0
+# except ZeroDivisionError:
+#     print("0으로 나누면 안되요")
+
+
+# no.299 다음과 같은 코드 구조를 사용하면 예외 발생 시 에러 메시지를 변수로 바인딩할 수 있습니다.
+
+# try:
+#     실행코드
+# except 예외 as 변수:
+#     예외처리코드 
+
+# 리스트의 인덱싱에 대해 에러를 출력해보세요.
+
+# data = [1, 2, 3]
+# for i in range(5)
+#     print(data[i])
+
+# data = [1, 2, 3]
+# for i in range(5):
+#     try:
+#         print(data[i])
+#     except IndexError as e:
+#         print(e)
+
+
+# no.300 파이썬 예외처리는 다음과 같은 구조를 가질 수 있습니다.
+
+# try:
+#     실행 코드
+# except:
+#     예외가 발생했을 때 수행할 코드
+# else:
+#     예외가 발생하지 않았을 때 수행할 코드
+# finally:
+#     예외 발생 여부와 상관없이 항상 수행할 코드 
+
+
+# 아래의 코드에 대해서 예외처리를 사용하고 try, except, else, finally
+# 에 적당한 코드를 작성해봅시다. else와 finally는 적당한 문구를 print하시면 됩니다.
+
+# per = ["10.31", "", "8.00"]
+
+# for i in per:
+#     print(float(per))
+
+# per = ["10.31", "", "8.00"]
+
+# for i in per:
+#     try:
+#         print(float(i))
+#     except:
+#         print(0)
+#     else:
+#         print("clean data")
+#     finally:
+#         print("변환 완료")
+
