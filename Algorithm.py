@@ -291,7 +291,6 @@
 # from itertools import combinations
 
 # def solution(nums):
-
 #     answer = 0
 #     temp = list(combinations(nums, 3))
 
@@ -402,3 +401,96 @@
 #         answer.append(temp)
 
 #     return answer
+
+
+
+
+
+#공백 없애기
+# https://level.goorm.io/exam/43259/%EA%B3%B5%EB%B0%B1-%EC%97%86%EC%95%A0%EA%B8%B0/quiz/1#
+
+# user_input = input()
+# answer = user_input.replace(" ","")
+# print(answer)
+
+
+
+
+
+# n번째 분수 찾기
+# https://www.acmicpc.net/problem/1193
+
+# x = int(input())
+# n = 0
+# while True:
+#     y = n*(n+1)/2
+#     if y >= x:
+#         n -= 1
+#         break
+#     n += 1
+
+# y = n*(n+1)/2
+# gap = int(x - y)
+# div = int(n + 2 - gap)
+# if n%2 == 0:
+#     answer = f'{div}/{gap}'
+# else:
+#     answer = f'{gap}/{div}'
+
+# print(answer)
+
+
+
+
+
+# 가장 큰 수
+# https://programmers.co.kr/learn/courses/30/lessons/42746
+
+# def solution(numbers):
+#     dict = {}
+#     answer = ''
+#     for i,j in enumerate(numbers):
+#         j = str(j)
+#         dict[i] = (j*3)
+
+#     sdict = sorted(dict.items(), reverse=True, key=lambda x:x[1])
+
+#     for k in sdict:
+#         answer += str(int(numbers[k[0]]))
+
+#     if answer.count('0') == len(answer):
+#         answer = '0'
+#     return(answer)
+
+
+
+
+
+#음양 더하기
+# https://programmers.co.kr/learn/courses/30/lessons/76501
+
+# absolutes = [4,7,12]
+# signs = [True,False,True]
+
+# answer = 0
+# for i,j in enumerate(absolutes):
+#     if signs[i] == True:
+#         answer += j
+#     else:
+#         answer -= j
+        
+# print(answer)
+
+
+
+
+
+#약수 구하기
+# https://level.goorm.io/exam/43255/%EC%95%BD%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/quiz/1
+
+# user_input = int(input())
+# answer = ''
+# for i in range(1, int(user_input)+1):
+#     if user_input % i == 0:
+#         answer += str(i)+' '
+# print(answer)
