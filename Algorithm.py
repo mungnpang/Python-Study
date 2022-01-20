@@ -494,3 +494,35 @@
 #     if user_input % i == 0:
 #         answer += str(i)+' '
 # print(answer)
+
+
+
+
+
+#집합으로 표현한 튜플
+# https://programmers.co.kr/learn/courses/30/lessons/64065
+
+# def solution(s):
+#     answer = []
+#     ref = s[2:-2].split('},{')
+#     ref.sort(key=lambda x:len(x))
+#     for i in ref:
+#         i = map(int,i.split(','))
+#         for j in i:
+#             if j not in answer:
+#                 answer.append(j)
+    
+#     return answer
+
+answer = []
+s = "{{1,2,3},{2,1},{1,2,4,3},{2}}"
+ref = s[2:-2].split('},{')
+ref.sort(key = lambda x:len(x))
+for i in ref:
+    i = list(map(int, i.split(',')))
+    for j in i:
+        if j not in answer:
+            answer.append(j)
+
+print(answer)
+
