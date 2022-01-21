@@ -514,15 +514,45 @@
     
 #     return answer
 
-answer = []
-s = "{{1,2,3},{2,1},{1,2,4,3},{2}}"
-ref = s[2:-2].split('},{')
-ref.sort(key = lambda x:len(x))
-for i in ref:
-    i = list(map(int, i.split(',')))
-    for j in i:
-        if j not in answer:
-            answer.append(j)
+
+
+
+
+#실패율
+
+# N = 5
+# stages = [2, 1, 2, 6, 2, 4, 3, 3]
+
+# def solution(N, stages):
+#     answer = []
+#     fail_rate = {}
+#     survivor = len(stages)
+#     for i in range(1, N+1):
+#         if survivor != 0:
+#             fail_rate[i] = (stages.count(i) / survivor)
+#             survivor -= stages.count(i)
+#         else:
+#             fail_rate[i] = 0
+
+#     fail_rate = sorted(fail_rate.items(), key=lambda x: x[1], reverse=True)
+#     for j in fail_rate:
+#         answer.append(j[0])
+
+#     return answer
+
+
+
+
+
+#H-Index
+#https://programmers.co.kr/learn/courses/30/lessons/42747
+
+citation = [3, 0, 6, 1, 5]
+answer = 0
+citation.sort()
+for i,j in enumerate(citation):
+    if j >= len(citation[i:]):
+        answer = len(citation[i:])
+        break
 
 print(answer)
-
