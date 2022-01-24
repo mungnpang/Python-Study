@@ -518,25 +518,16 @@
 
 
 
-#실패율
+#H-Index
+#https://programmers.co.kr/learn/courses/30/lessons/42747
 
-# N = 5
-# stages = [2, 1, 2, 6, 2, 4, 3, 3]
-
-# def solution(N, stages):
-#     answer = []
-#     fail_rate = {}
-#     survivor = len(stages)
-#     for i in range(1, N+1):
-#         if survivor != 0:
-#             fail_rate[i] = (stages.count(i) / survivor)
-#             survivor -= stages.count(i)
-#         else:
-#             fail_rate[i] = 0
-
-#     fail_rate = sorted(fail_rate.items(), key=lambda x: x[1], reverse=True)
-#     for j in fail_rate:
-#         answer.append(j[0])
+# def solution(citations):
+#     answer = 0
+#     citations.sort()
+#     for i,j in enumerate(citations):  
+#         if j >= len(citations[i:]):
+#             answer = len(citations[i:])
+#             break
 
 #     return answer
 
@@ -544,15 +535,131 @@
 
 
 
-#H-Index
-#https://programmers.co.kr/learn/courses/30/lessons/42747
+#수포자의 모의고사
+# https://programmers.co.kr/learn/courses/30/lessons/42840
 
-citation = [3, 0, 6, 1, 5]
-answer = 0
-citation.sort()
-for i,j in enumerate(citation):
-    if j >= len(citation[i:]):
-        answer = len(citation[i:])
-        break
+# def solution(answers):
+#     answer = []
+#     no1 = [1,2,3,4,5]
+#     no2 = [2,1,2,3,2,4,2,5]
+#     no3 = [3,3,1,1,2,2,4,4,5,5]
+#     score = {1:0, 2:0, 3:0}
 
-print(answer)
+#     for i,j in enumerate(answers):
+#         if no1[i%5] == j:
+#             score[1] += 1
+#         if no2[i%8] == j:
+#             score[2] += 1
+#         if no3[i%10] == j:
+#             score[3] += 1
+
+#     score = sorted(score.items(), key=lambda x:x[1], reverse=True)
+#     answer.append(score[0][0])
+#     if score[0][1] == score[1][1]:
+#         answer.append(score[1][0])
+#     if score[0][1] == score[2][1]:
+#         answer.append(score[2][0])
+
+#     return answer
+
+
+
+
+
+#신고 결과 받기
+# https://programmers.co.kr/learn/courses/30/lessons/92334
+
+id_list = ["muzi", "frodo", "apeach", "neo"]
+report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
+report = list(set(report))
+k = 2
+e_count = {}
+r_count = {}
+ban_list = []
+for id in id_list:
+    r_count[id] = 0
+    e_count[id] = 0
+
+for i in report:
+    r_count[i.split(' ')[1]] += 1
+
+for x,y in r_count.items():
+    if y >= k:
+        ban_list.append(x)
+
+for j in report:
+    if j.split(' ')[1] in ban_list:
+        e_count[j.split(' ')[0]] += 1
+
+print(list(e_count.values()))
+    
+
+
+
+
+
+
+
+
+
+
+
+#k개의 숫자를 제거하여 가장 큰 수 만들기
+# https://programmers.co.kr/learn/courses/30/lessons/42883
+
+# def solution(number, k):
+#     temp = []
+#     for i,j in enumerate(number):
+#         while temp and temp[-1] < j and k > 0:
+#             temp.pop()
+#             k -= 1
+#         if k == 0:
+#             temp += number[i:]
+#             break
+#         temp.append(j)
+        
+#     if k > 0:
+#         temp = temp[:-k]
+        
+#     answer = ''.join(temp)      
+    
+#     return answer
+
+
+
+
+
+#조이스틱을 활용해 이름 완성시키기
+# https://programmers.co.kr/learn/courses/30/lessons/42860
+
+# name = 'JAZAAZ'
+# r_name = name[::-1]
+# std = (len(name) - 1)
+# rstop = 0
+# lstop = 0
+# answer = 0
+
+# for i in name:
+#     dif = ord(i) - ord('A')
+#     if dif < 13:
+#         answer += dif
+#     else:
+#         answer += (26-dif)
+
+
+# for j in range(len(name)):
+#     if name[j] != 'A' and name[j+1] == 'A':
+#         rstop += (j+1)
+#         break
+        
+# for k in range(len(r_name)):
+#     if r_name[k] != 'A' and r_name[k+1] == 'A':
+#         lstop += (k+1)
+#         break
+
+# ltor = (lstop * 2) + rstop
+# rtol = (rstop * 2) + lstop
+# answer += min(ltor,rtol,std)
+
+# print(answer)
+
