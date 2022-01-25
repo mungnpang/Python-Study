@@ -539,28 +539,30 @@
 # https://programmers.co.kr/learn/courses/30/lessons/42840
 
 # def solution(answers):
-#     answer = []
-#     no1 = [1,2,3,4,5]
-#     no2 = [2,1,2,3,2,4,2,5]
-#     no3 = [3,3,1,1,2,2,4,4,5,5]
-#     score = {1:0, 2:0, 3:0}
 
-#     for i,j in enumerate(answers):
-#         if no1[i%5] == j:
-#             score[1] += 1
-#         if no2[i%8] == j:
-#             score[2] += 1
-#         if no3[i%10] == j:
-#             score[3] += 1
+# answers = [1,3,2,4,2]
+# answer = []
+# no1 = [1,2,3,4,5]
+# no2 = [2,1,2,3,2,4,2,5]
+# no3 = [3,3,1,1,2,2,4,4,5,5]
+# score = {1:0, 2:0, 3:0}
 
-#     score = sorted(score.items(), key=lambda x:x[1], reverse=True)
-#     answer.append(score[0][0])
-#     if score[0][1] == score[1][1]:
-#         answer.append(score[1][0])
-#     if score[0][1] == score[2][1]:
-#         answer.append(score[2][0])
+# for i,j in enumerate(answers):
+#     if no1[i%5] == j:
+#         score[1] += 1
+#     if no2[i%8] == j:
+#         score[2] += 1
+#     if no3[i%10] == j:
+#         score[3] += 1
 
-#     return answer
+# score = sorted(score.items(), key=lambda x:x[1], reverse=True)
+# answer.append(score[0][0])
+# if score[0][1] == score[1][1]:
+#     answer.append(score[1][0])
+# if score[0][1] == score[2][1]:
+#     answer.append(score[2][0])
+
+# print(answer)
 
 
 
@@ -569,37 +571,30 @@
 #신고 결과 받기
 # https://programmers.co.kr/learn/courses/30/lessons/92334
 
-id_list = ["muzi", "frodo", "apeach", "neo"]
-report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
-report = list(set(report))
-k = 2
-e_count = {}
-r_count = {}
-ban_list = []
-for id in id_list:
-    r_count[id] = 0
-    e_count[id] = 0
+# id_list = ["muzi", "frodo", "apeach", "neo"]
+# report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
+# report = list(set(report))
+# k = 2
+# e_count = {}
+# r_count = {}
+# ban_list = []
+# for id in id_list:
+#     r_count[id] = 0
+#     e_count[id] = 0
 
-for i in report:
-    r_count[i.split(' ')[1]] += 1
+# for i in report:
+#     r_count[i.split(' ')[1]] += 1
 
-for x,y in r_count.items():
-    if y >= k:
-        ban_list.append(x)
+# for x,y in r_count.items():
+#     if y >= k:
+#         ban_list.append(x)
 
-for j in report:
-    if j.split(' ')[1] in ban_list:
-        e_count[j.split(' ')[0]] += 1
+# for j in report:
+#     if j.split(' ')[1] in ban_list:
+#         e_count[j.split(' ')[0]] += 1
 
-print(list(e_count.values()))
+# print(list(e_count.values()))
     
-
-
-
-
-
-
-
 
 
 
@@ -632,7 +627,7 @@ print(list(e_count.values()))
 #조이스틱을 활용해 이름 완성시키기
 # https://programmers.co.kr/learn/courses/30/lessons/42860
 
-# name = 'JAZAAZ'
+# name = 'JAZ'
 # r_name = name[::-1]
 # std = (len(name) - 1)
 # rstop = 0
@@ -663,3 +658,33 @@ print(list(e_count.values()))
 
 # print(answer)
 
+
+
+
+
+# 로또의 최고순위와 최저순위
+# https://programmers.co.kr/learn/courses/30/lessons/77484
+
+# def solution(lottos, win_nums):
+#     answer = []
+#     rank = [6,5,4,3,2,1]
+#     max = 0
+#     min = 0
+#     for lotto in lottos:
+#         if lotto in win_nums:
+#             max += 1
+#             min += 1
+#         elif lotto == 0:
+#             max += 1
+            
+#     if max == 0:
+#         answer.append(6)
+#     else:
+#         answer.append(rank[max-1])
+    
+#     if min == 0:
+#         answer.append(6)
+#     else:
+#         answer.append(rank[min-1])
+        
+#     return answer
