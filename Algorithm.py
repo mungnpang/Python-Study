@@ -12,8 +12,6 @@
 
 
 
-
-
 #배열 array의 i~j번째 숫자까지 자르고 정렬하여 k번째의 수를 구하기
 # https://programmers.co.kr/learn/courses/30/lessons/42748
 
@@ -38,8 +36,6 @@
 
 
 
-
-
 #서로 다른 인덱스에 있는 두개의 수를 뽑아 만들 수 있는 모든 수를 오름차순으로 정렬하기
 # https://programmers.co.kr/learn/courses/30/lessons/68644
 
@@ -54,8 +50,6 @@
 #     answer.sort()
 
 #     return answer
-
-
 
 
 
@@ -84,8 +78,6 @@
 
 
 
-
-
 #정규표현식을 활용한 신규아이디 추천
 # https://programmers.co.kr/learn/courses/30/lessons/72410
 
@@ -111,8 +103,6 @@
 
 
 
-
-
 #전화번호 뒷4자리를 제외하고 모두 *로 가리기
 # https://programmers.co.kr/learn/courses/30/lessons/12948
 
@@ -126,16 +116,12 @@
 
 
 
-
-
 #0~9 범위내에서 없는 숫자를 찾아 모두 더한수 구하기
 # https://programmers.co.kr/learn/courses/30/lessons/86051
 
 # def solution(numbers):
 #     answer = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 #     return sum(answer - set(numbers))
-
-
 
 
 
@@ -165,8 +151,6 @@
 
 
 
-
-
 #네오와 프로도의 영단어 카드게임. 문자열로 표현된 숫자들을 정수 형태로 변환
 # https://programmers.co.kr/learn/courses/30/lessons/81301
 
@@ -193,8 +177,6 @@
 # for key,value in a.items():
 #     s = s.replace(key, value)
 # print(s)
-
-
 
 
 
@@ -239,8 +221,6 @@
 
 
 
-
-
 #124 나라의 이상한 숫자
 #https://programmers.co.kr/learn/courses/30/lessons/12899
 
@@ -266,8 +246,6 @@
 
 
 
-
-
 #폰켓몬 최대로 얻기
 # https://programmers.co.kr/learn/courses/30/lessons/1845
 
@@ -280,8 +258,6 @@
 #     answer = len(temp)
 
 # print(answer)
-
-
 
 
 
@@ -310,8 +286,6 @@
 
 
 
-
-
 #하샤드 수 판별식
 # https://programmers.co.kr/learn/courses/30/lessons/12947
 
@@ -328,8 +302,6 @@
 #         answer = False
     
 #     return answer
-
-
 
 
 
@@ -404,16 +376,12 @@
 
 
 
-
-
 #공백 없애기
 # https://level.goorm.io/exam/43259/%EA%B3%B5%EB%B0%B1-%EC%97%86%EC%95%A0%EA%B8%B0/quiz/1#
 
 # user_input = input()
 # answer = user_input.replace(" ","")
 # print(answer)
-
-
 
 
 
@@ -441,8 +409,6 @@
 
 
 
-
-
 # 가장 큰 수
 # https://programmers.co.kr/learn/courses/30/lessons/42746
 
@@ -464,8 +430,6 @@
 
 
 
-
-
 #음양 더하기
 # https://programmers.co.kr/learn/courses/30/lessons/76501
 
@@ -483,8 +447,6 @@
 
 
 
-
-
 #약수 구하기
 # https://level.goorm.io/exam/43255/%EC%95%BD%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/quiz/1
 
@@ -494,8 +456,6 @@
 #     if user_input % i == 0:
 #         answer += str(i)+' '
 # print(answer)
-
-
 
 
 
@@ -516,8 +476,6 @@
 
 
 
-
-
 #H-Index
 #https://programmers.co.kr/learn/courses/30/lessons/42747
 
@@ -530,8 +488,6 @@
 #             break
 
 #     return answer
-
-
 
 
 
@@ -566,8 +522,6 @@
 
 
 
-
-
 #신고 결과 받기
 # https://programmers.co.kr/learn/courses/30/lessons/92334
 
@@ -597,8 +551,6 @@
     
 
 
-
-
 #k개의 숫자를 제거하여 가장 큰 수 만들기
 # https://programmers.co.kr/learn/courses/30/lessons/42883
 
@@ -619,8 +571,6 @@
 #     answer = ''.join(temp)      
     
 #     return answer
-
-
 
 
 
@@ -660,8 +610,6 @@
 
 
 
-
-
 # 로또의 최고순위와 최저순위
 # https://programmers.co.kr/learn/courses/30/lessons/77484
 
@@ -688,3 +636,230 @@
 #         answer.append(rank[min-1])
         
 #     return answer
+
+
+
+#키패드 누르기
+# https://programmers.co.kr/learn/courses/30/lessons/67256
+# numbers = [1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5]
+# hand = 'right'
+# answer = ''
+# temp = []
+# left = [1,4,7]
+# right = [3,6,9]
+# center = [2,5,8,0]
+# cr_left = 0
+# cr_right = 0
+# for num in numbers:
+#     if num in left:
+#         temp.append('L')
+#         cr_left = num
+#     elif num in right:
+#         temp.append('R')
+#         cr_right = num
+#     else:
+#         if cr_left not in center and cr_right not in center:
+#             cr_right -= 2
+#             a = abs(num - cr_left)
+#             b = abs(num - cr_right)
+#             if a > b:
+#                 temp.append('R')
+#                 cr_right = num
+#             elif a < b:
+#                 temp.append('L')
+#                 cr_left = num
+#             else:
+#                 if hand == 'right':
+#                     temp.append('R')
+#                     cr_right = num
+#                 elif hand == 'left':
+#                     temp.append('L')
+#                     cr_left = num
+#         elif 
+
+
+
+#사칙 연산
+# https://www.acmicpc.net/problem/10869
+
+# input = input()
+# A = int(input.split(' ')[0])
+# B = int(input.split(' ')[-1])
+# print(A+B)
+# print(A-B)
+# print(A*B)
+# print(int(A/B))
+# print(A%B)
+
+
+
+#곱셈
+# https://www.acmicpc.net/problem/2588
+
+# A = int(input())
+# B = str(input())
+# third = A * int(B[2])
+# fourth = A * int(B[1])
+# fifth = A * int(B[0])
+# result = fifth*100 + fourth*10 + third
+
+# print(third)
+# print(fourth)
+# print(fifth)
+# print(result)
+
+
+
+# 알람시계
+# https://www.acmicpc.net/problem/2884
+
+# input = input()
+# hour = int(input.split(' ')[0])
+# min = int(input.split(' ')[-1])
+# if min >= 45:
+#     min -= 45
+#     print(f'{hour} {min}')
+# else:
+#     min += 15
+#     if (hour-1) < 0:
+#         print(f'23 {min}')
+#     else:
+#         print(f'{hour-1} {min}')
+
+
+
+#더하기 사이클
+# https://www.acmicpc.net/problem/1110
+
+# input = int(input())
+# temp = input
+# reps = 0
+# while True:
+#     a = temp//10
+#     b = temp%10
+#     c = (a+b)%10
+#     temp = (b*10) + c
+#     reps += 1
+#     if input == temp:
+#         break
+
+# print(reps)
+
+
+
+#평균은 넘겠지
+# https://www.acmicpc.net/problem/4344
+
+# num = int(input())
+
+# for _ in range(num):
+#     scores = list(map(int, input().split()))
+#     avg = sum(scores[1:])/scores[0]
+    
+#     cnt = 0
+#     for i in scores[1:]:
+#         if i > avg:
+#             cnt += 1
+            
+#     per = f'{((cnt/scores[0])*100):.3f}%'
+#     print(per)
+
+
+
+#셀프 넘버
+# https://www.acmicpc.net/problem/4673
+
+# nums = []
+# for i in range(1,10000):
+#     dn = i + sum(map(int,str(i)))
+#     nums.append(dn)
+
+# for j in range(1,10000):
+#     if j not in nums:
+#         print(j)
+
+
+
+#단어 공부
+# https://www.acmicpc.net/problem/1157
+
+# input = input().upper()
+# result = ''
+# temp = 0
+# for num in range(65,91):
+#     cnt = input.count(chr(num))
+#     if cnt > temp:
+#         result = chr(num)
+#         temp = cnt
+#     elif cnt == temp:
+#         result += chr(num)
+
+# if len(result) > 1:
+#     print('?')
+# else:
+#     print(result)
+
+# A2)
+# word = input()
+# word = list(word.upper())
+# result_dict = {chr(i):0 for i in range(65,91)}
+# for i in word:
+#     result_dict[i] += 1
+# result = sorted(result_dict.items(),key=lambda x:x[1],reverse=True)
+# if result[0][1] == result[1][1]:
+#     print("?")
+# else:
+#     print(result[0][0])
+
+
+
+#크로아티아 알파벳
+# https://www.acmicpc.net/problem/2941
+
+# c_alpha = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+# input = input()
+# for alpha in c_alpha:
+#     input = input.replace(alpha, '@')
+
+# print(len(input))
+
+
+
+#그룹 단어 체커
+# https://www.acmicpc.net/problem/1316
+
+# num = int(input())
+# cnt = 0
+# for _ in range(num):
+#     word = str(input())
+#     temp = 1
+#     fail = 0
+#     for i in range(len(word)-1):
+#         if word[i] == word[i+1]:
+#             temp += 1
+#         else:
+#             if temp == word.count(word[i]):
+#                 temp = 1
+#             else:
+#                 fail += 1
+    
+#     if fail == 0:
+#         cnt+=1
+
+# print(cnt)
+
+# A2)
+# N = int(input())
+# result_count = 0
+# for _ in range(N):
+#     word = input()
+#     flag = True
+#     for i in word:
+#         word_count = word.count(i)
+#         if word_count >= 2 and str(i*word_count) not in word:
+#             flag = False
+#             break
+#     if flag:
+#         result_count+=1
+
+# print(result_count)
