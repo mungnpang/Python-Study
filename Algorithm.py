@@ -863,3 +863,75 @@
 #         result_count+=1
 
 # print(result_count)
+
+
+
+#설탕 배달
+# https://www.acmicpc.net/problem/2839
+
+# input = int(input())
+# cnt = 0
+# while input >= 0:
+#     if input % 5 == 0:
+#         cnt += input//5
+#         print(cnt)
+#         break
+#     input -= 3
+#     cnt += 1
+# else:
+#     print(-1)
+
+
+
+#베르트랑 공준
+# https://www.acmicpc.net/problem/4948
+
+##에라토스테네스의 해인지 뭔지 함수형으로 만들어서 써봄 근데 겁나 느림..ㅋㅋㅋ
+# def count_prime(n):
+#     a = [False,False] + [True]*(n-1)
+#     primes=[]
+
+#     for i in range(2,n+1):
+#         if a[i]:
+#             primes.append(i)
+#             for j in range(2*i, n+1, i):
+#                 a[j] = False
+
+#     return len(primes)
+
+# while True:
+#     n = int(input())
+#     if n == 0:
+#         break
+#     else:
+#         print(count_prime(2*n)-count_prime(n))
+
+# A2) #주어진 범위내에서 테이블을 미리 다 만들어놓고 탐색만 시키는게 훨씬 빠름..!
+# max_num = 123456
+# num_list = [False, False]+[True] * (2*max_num)
+# m = int(2*max_num ** 0.5)
+# for i in range(2, m+1):
+#     if num_list[i]:
+#         for j in range(i+i, 2*max_num+1, i):
+#             num_list[j] = False
+
+# while 1:
+#     n = int(input())
+#     if n == 0:
+#         break
+#     print(len([i for i in range(n+1, 2*n+1) if num_list[i] == True]))
+
+
+
+#Fly me to Alpha Centauri
+# https://www.acmicpc.net/problem/1011
+
+n = 6
+min = 1
+while (min*(min+1)) < n:
+    min += 1
+    rest = n - (min*(min+1))
+
+print(rest)
+print(2*(min-1)+rest)
+
