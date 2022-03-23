@@ -926,12 +926,71 @@
 #Fly me to Alpha Centauri
 # https://www.acmicpc.net/problem/1011
 
-n = 6
-min = 1
-while (min*(min+1)) < n:
-    min += 1
-    rest = n - (min*(min+1))
+# A1)
+# cnt = int(input())
 
-print(rest)
-print(2*(min-1)+rest)
+# for _ in range(cnt):
+#     x, y = map(int,input().split(' '))
+#     distance = y - x
+#     count = 0  # 이동 횟수
+#     move = 1  # count별 이동 가능한 거리
+#     move_total = 0  # 이동한 거리의 합
+#     while move_total < distance :
+#         count += 1
+#         move_total += move  # count 수에 해당하는 move를 더함
+#         if count % 2 == 0 :  # count가 2의 배수일 때, 
+#             move += 1  
+#     print(count)
 
+# A2) 제곱근을 활용한 풀이, 겁나빠른데 생각하기 어려움
+# n=int(input())
+# def f(m):
+#     k = int(m**(0.5))
+#     kk = k**2
+#     if m == kk:
+#         return 2*k-1
+#     elif m > kk+k:
+#         return 2*k+1
+#     else:
+#         return 2*k
+    
+# for _ in range(n):
+#     a,b = map(int, input().split())
+#     print(f(b-a))
+
+
+
+#약수
+# https://www.acmicpc.net/problem/1037
+
+# x=input()
+# y=list(map(int,input().split()))
+# print(max(y)*min(y))
+
+
+
+#달팽이는 올라가고 싶다
+# https://www.acmicpc.net/problem/2869
+
+# A, B, V = list(map(int, input().split()))
+# x=(V-B)%(A-B)
+# y=(V-B)//(A-B)
+# if x == 0:
+#     print(y)
+# else:
+#     print(y+1)
+
+
+
+#영화감독 숌
+# https://www.acmicpc.net/problem/1436
+
+# N = int(input())
+# num = 665
+# cnt = 0
+# while cnt != N:
+#     num += 1
+#     if '666' in str(num):
+#         cnt += 1
+    
+# print(num)
