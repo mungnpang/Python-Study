@@ -935,10 +935,10 @@
 #     count = 0  # 이동 횟수
 #     move = 1  # count별 이동 가능한 거리
 #     move_total = 0  # 이동한 거리의 합
-#     while move_total < distance :
+#     while move_total < distance:
 #         count += 1
-#         move_total += move  # count 수에 해당하는 move를 더함
-#         if count % 2 == 0 :  # count가 2의 배수일 때, 
+#         move_total += move
+#         if count % 2 == 0:
 #             move += 1  
 #     print(count)
 
@@ -953,7 +953,7 @@
 #         return 2*k+1
 #     else:
 #         return 2*k
-    
+
 # for _ in range(n):
 #     a,b = map(int, input().split())
 #     print(f(b-a))
@@ -994,3 +994,179 @@
 #         cnt += 1
     
 # print(num)
+
+
+
+#최대공약수 최소공배수
+# https://www.acmicpc.net/problem/2609
+
+# A, B = list(map(int, input().split()))
+# n = 2
+# x = 1
+# while n < 10000:
+#     if A%n == 0 and B%n == 0:
+#         A /= n
+#         B /= n
+#         x *= n
+#     else:
+#         n += 1
+
+# print(x)
+# print(int(A*B*x))
+
+
+
+# ACM 호텔
+# https://www.acmicpc.net/problem/10250
+
+# reps = int(input())
+# for i in range(reps):
+#     H, W, N = list(map(int, input().split()))
+#     floor = N % H
+#     room = N // H + 1
+#     if floor == 0:
+#         floor += H
+#         room -= 1
+    
+#     if room < 10:
+#         print(int(str(floor)+'0'+str(room)))
+#     else:
+#         print(int(str(floor)+str(room)))
+
+
+
+# 소수 구하기
+# https://www.acmicpc.net/problem/1929
+
+# max_num = 1000000
+# table = [False, False]+[True]*999999
+# m = int(max_num ** 0.5)
+# for i in range(2, m+1):
+#     if table[i]:
+#         for j in range(2*i, max_num+1, i):
+#             table[j] = False
+
+# a,b = list(map(int, input().split()))
+# for i in range(a,b+1):
+#     if table[i] == True:
+#         print(i)
+
+
+
+# 스택
+# https://www.acmicpc.net/problem/10828
+
+# 그냥 input으로 입력값받으면 시간초과됨.. 아래 방식을 기억해두자
+# import sys
+# input = sys.stdin.readline
+# N = int(input())
+# list = []
+# for i in range(N):
+#     cmd = input().split()
+#     if cmd[0] == 'push':
+#         list.append(int(cmd[1]))
+#     elif cmd[0] == 'top':
+#         if len(list) > 0:
+#             print(list[-1])
+#         else:
+#             print(-1)
+#     elif cmd[0] == 'pop':
+#         if len(list) > 0:
+#             print(list.pop())
+#         else:
+#             print(-1)
+#     elif cmd[0] == 'size':
+#         print(len(list))
+#     elif cmd[0] == 'empty':
+#         if len(list) == 0:
+#             print(1)
+#         else:
+#             print(0)
+
+
+
+# 제로
+# https://www.acmicpc.net/problem/10773
+
+# import sys
+# input = sys.stdin.readline
+
+# N = int(input())
+# list = []
+# for _ in range(N):
+#     call = int(input())
+#     if call == 0:
+#         list.pop()
+#     else:
+#         list.append(call)
+        
+# print(sum(list))
+
+
+
+# 괄호
+# https://www.acmicpc.net/problem/9012
+
+# N = int(input())
+# for i in range(N):
+#     s = input()
+#     list = []
+#     for j in s:
+#         if j == '(':
+#             list.append(j)
+#         elif j == ')':
+#             if len(list) != 0 and list[-1] == '(':
+#                 list.pop()
+#             else:
+#                 list.append(')')
+#                 break
+#     if len(list) == 0:
+#         print('YES')
+#     else:
+#         print('NO')
+
+
+
+# 좌표 정렬하기2
+# https://www.acmicpc.net/problem/11651
+
+# import sys
+# input = sys.stdin.readline
+
+# N = int(input())
+# list = []
+# for _ in range(N):
+#     x,y = map(int,input().split())
+#     list.append([x,y])
+
+# list.sort(key=lambda x:(x[1], x[0]))
+# for i in list:
+#     print(i[0], i[1])
+
+
+
+#나무 자르기
+# https://www.acmicpc.net/problem/2805
+
+# import sys
+# input = sys.stdin.readline
+
+# N, M = map(int, input().split())
+# trees = list(map(int, input().split()))
+
+# low = 0
+# high = max(trees)
+
+# while low <= high:
+#     A = (low+high)//2
+#     tot = 0
+#     for i in trees:
+#         if i > A:
+#             tot += i - A
+    
+#     if tot >= M:
+#         low = A + 1
+#     else:
+#         high = A - 1
+
+# print(high)
