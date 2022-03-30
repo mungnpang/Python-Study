@@ -639,46 +639,6 @@
 
 
 
-#키패드 누르기
-# https://programmers.co.kr/learn/courses/30/lessons/67256
-# numbers = [1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5]
-# hand = 'right'
-# answer = ''
-# temp = []
-# left = [1,4,7]
-# right = [3,6,9]
-# center = [2,5,8,0]
-# cr_left = 0
-# cr_right = 0
-# for num in numbers:
-#     if num in left:
-#         temp.append('L')
-#         cr_left = num
-#     elif num in right:
-#         temp.append('R')
-#         cr_right = num
-#     else:
-#         if cr_left not in center and cr_right not in center:
-#             cr_right -= 2
-#             a = abs(num - cr_left)
-#             b = abs(num - cr_right)
-#             if a > b:
-#                 temp.append('R')
-#                 cr_right = num
-#             elif a < b:
-#                 temp.append('L')
-#                 cr_left = num
-#             else:
-#                 if hand == 'right':
-#                     temp.append('R')
-#                     cr_right = num
-#                 elif hand == 'left':
-#                     temp.append('L')
-#                     cr_left = num
-#         elif 
-
-
-
 #사칙 연산
 # https://www.acmicpc.net/problem/10869
 
@@ -1170,3 +1130,163 @@
 #         high = A - 1
 
 # print(high)
+
+
+
+# 최소공배수
+# https://www.acmicpc.net/problem/1934
+
+# import sys
+# input = sys.stdin.readline
+
+# def cal(n,m):
+#     if m == 0:
+#         return n
+#     elif n % m == 0:
+#         return m
+#     return cal(m, n%m)
+
+# N = int(input())
+# for _ in range(N):
+#     A,B = map(int, input().split())
+#     if B > A:
+#         A,B = B,A
+#     print(int(A*B/cal(A,B)))
+        
+
+
+# 이항 계수 1
+# https://www.acmicpc.net/problem/11050
+
+# from sys import stdin
+
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     return n * factorial(n-1)
+
+# n, k = map(int, stdin.readline().split())
+# print(factorial(n) // (factorial(k) * factorial(n - k)))
+
+
+
+# 다리 놓기
+# https://www.acmicpc.net/problem/1010
+
+# from sys import stdin
+# input = stdin.readline
+
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     return n * factorial(n-1)
+
+# k = int(input())
+
+# for _ in range(k):
+#     N, M = map(int, input().split())
+#     print(factorial(M) // (factorial(N) * factorial(M - N)))
+
+
+
+# 균형잡힌 세상
+# https://www.acmicpc.net/problem/4949
+        
+# while True:
+#     string = input()
+#     stack = []
+    
+#     if string == '.':
+#         break
+    
+#     for str in string:
+#         if str == '(' or str == '[':
+#             stack.append(str)
+#         elif str == ']':
+#             if len(stack) != 0 and stack[-1] == '[':
+#                 stack.pop()
+#             else:
+#                 stack.append(']')
+#                 break
+#         elif str == ')':
+#             if len(stack) != 0 and stack[-1] == '(':
+#                 stack.pop()
+#             else:
+#                 stack.append(')')
+#                 break
+    
+#     if len(stack) == 0:
+#         print('yes')
+#     else:
+#         print('no')
+
+
+
+# 스택 수열
+# https://www.acmicpc.net/problem/1874
+
+# import sys
+# input = sys.stdin.readline
+
+# N = int(input())
+# stack = []
+# answer = []
+# flag = True
+# cnt = 1
+# for _ in range(N):
+#     num = int(input())
+#     while cnt <= num:
+#         stack.append(cnt)
+#         answer.append('+')
+#         cnt += 1
+    
+#     if stack[-1] == num:
+#         stack.pop()
+#         answer.append('-')
+#     else:
+#         print('NO')
+#         flag = False
+#         break
+
+# if flag == True:
+#     for i in answer:
+#         print(i)
+
+
+
+# 회전하는 큐
+# https://www.acmicpc.net/problem/1021
+
+# import sys
+# input = sys.stdin.readline
+
+# N, M = map(int, input().split())
+# target = list(map(int, input().split()))
+# queue = [i for i in range(1, N+1)]
+# cnt = 0
+# for i in range(M):
+#     length = len(queue)
+#     index = queue.index(target[i])
+#     if index < (length - index):
+#         while True:
+#             if queue[0] == target[i]:
+#                 del queue[0]
+#                 break
+#             else:
+#                 queue.append(queue[0])
+#                 del queue[0]
+#                 cnt += 1
+#     else:
+#         while True:
+#             if queue[0] == target[i]:
+#                 del queue[0]
+#                 break
+#             else:
+#                 queue.insert(0, queue[-1])
+#                 del queue[-1]
+#                 cnt += 1
+
+# print(cnt)
+
+
+
