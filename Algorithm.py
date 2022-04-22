@@ -1290,3 +1290,372 @@
 
 
 
+# 큐2
+# https://www.acmicpc.net/problem/18258
+
+# import sys
+# from collections import deque
+
+# input = sys.stdin.readline
+
+# N = int(input())
+# q = deque([])
+
+# for _ in range(N):
+#     cmd = input().split()
+#     if cmd[0] == 'push':
+#         q.append(int(cmd[1]))
+#     elif cmd[0] == 'front':
+#         if len(q) > 0:
+#             print(q[0])
+#         else:
+#             print(-1)
+#     elif cmd[0] == 'back':
+#         if len(q) > 0:
+#             print(q[-1])
+#         else:
+#             print(-1)
+#     elif cmd[0] == 'size':
+#         print(len(q))
+#     elif cmd[0] == 'empty':
+#         if len(q) == 0:
+#             print(1)
+#         else:
+#             print(0)
+#     elif cmd[0] == 'pop':
+#         if len(q) > 0:
+#             print(q.popleft())
+#         else:
+#             print(-1)
+
+
+
+# 통계학
+# https://www.acmicpc.net/problem/2108
+
+# import sys
+# from collections import Counter
+
+# n = int(sys.stdin.readline())
+# temp = []
+
+# for i in range(n):
+#     temp.append(int(sys.stdin.readline()))
+
+# temp.sort()
+# frq = Counter(temp).most_common()
+
+# print(round(sum(temp) / n))
+# print(temp[n // 2])
+
+# if len(frq) > 1:
+#     if frq[0][1] == frq[1][1]:
+#         print(frq[1][0])
+#     else:
+#         print(frq[0][0])
+# else:
+#     print(frq[0][0])
+# print(temp[-1] - temp[0])
+
+
+
+# 색종이 만들기
+# https://www.acmicpc.net/problem/2630
+
+# import sys
+# input = sys.stdin.readline
+
+# N = int(input())
+# matrix = []
+# result = []
+
+# for _ in range(N):
+#     line = list(map(int, input().split()))
+#     matrix.append(line)
+    
+# def papercolor(x,y,N):
+#     color = matrix[x][y]
+#     for i in range(x, x+N):
+#         for j in range(y, y+N):
+#             if color != matrix[i][j]:
+#                 papercolor(x, y, N//2)
+#                 papercolor(x, y+N//2, N//2)
+#                 papercolor(x+N//2, y, N//2)
+#                 papercolor(x+N//2, y+N//2, N//2)
+#                 return
+#     if color == 0:
+#         result.append(0)
+#     else:
+#         result.append(1)
+        
+# papercolor(0, 0, N)
+# print(result.count(0))
+# print(result.count(1))
+
+
+
+# 체육복
+# https://programmers.co.kr/learn/courses/30/lessons/42862
+
+# def solution(n, lost, reserve):
+#     list = [1] * n
+#     for i in lost:
+#         list[i-1] -= 1
+#     for j in reserve:
+#         list[j-1] += 1
+
+#     for k in range(len(list)-1):
+#         if list[k] == 2 and list[k+1] == 0:
+#             list[k] -= 1
+#             list[k+1] += 1
+#         elif list[k] == 0 and list[k+1] == 2:
+#             list[k] += 1
+#             list[k+1] -= 1
+
+#     return (len(list) - list.count(0))
+
+
+
+# [카카오 인턴] 키패드 누르기
+# https://programmers.co.kr/learn/courses/30/lessons/67256
+
+# npad = [[1,2,3],[4,5,6],[7,8,9],['*',0,'#']]
+# hand = 'right'
+# numbers = [1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5]
+# cr_left = [3,0]
+# cr_right = [3,2]
+# answer = []
+
+# for num in numbers:
+#     cords = []
+#     for i in npad:
+#         if num in i:
+#             cords.append(npad.index(i))
+#             cords.append(i.index(num))
+#             break
+    
+#     if num in [1, 4, 7]:
+#         cr_left = cords
+#         answer.append('L')
+#     elif num in [3, 6, 9]:
+#         cr_right = cords
+#         answer.append('R')
+#     else:
+#         distance_l = abs(cords[0] - cr_left[0]) + abs(cords[1] - cr_left[1])
+#         distance_r = abs(cords[0] - cr_right[0]) + abs(cords[1] - cr_right[1])
+
+#         if distance_l > distance_r:
+#             cr_right = cords
+#             answer.append('R')
+#         elif distance_l < distance_r:
+#             cr_left = cords
+#             answer.append('L')
+#         else:
+#             if hand == 'right':
+#                 cr_right = cords
+#                 answer.append('R')
+#             elif hand == 'left':
+#                 cr_left = cords
+#                 answer.append('L')
+                
+# print(''.join(answer))
+
+
+
+# 크레인 인형뽑기 게임
+# https://programmers.co.kr/learn/courses/30/lessons/64061
+
+# board = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
+# moves = [1,5,3,5,1,2,1,4]
+# basket = []
+# result = 0
+# for i in range(len(moves)):
+#     for j in range(len(board)):
+#         crane = moves[i]
+#         target = board[j][crane-1]
+#         if target == 0:
+#             continue
+#         else:
+#             board[j][crane-1] = 0
+#             if basket and basket[-1] == target:
+#                 result += 2
+#                 basket.pop()
+#                 break
+#             else:
+#                 basket.append(target)
+#                 break
+
+# print(result)
+
+
+
+# 내적
+# https://programmers.co.kr/learn/courses/30/lessons/70128
+
+# a = [1,2,3,4]
+# b = [-3,-1,0,2]
+# result = 0
+# for i in range(len(a)):
+#     result += a[i] * b[i]
+    
+# print(result)
+
+
+
+# 완주하지 못한 선수
+# https://programmers.co.kr/learn/courses/30/lessons/42576
+
+# participant = ["leo", "kiki", "eden"]
+# completion = ["eden", "kiki"]
+
+# def solution(participant, completion):
+#     participant.sort()
+#     completion.sort()
+
+#     for i in range(len(completion)):
+#         if participant[i] != completion[i]:
+#             return participant[i]
+        
+#     return participant[-1]
+
+
+
+# 약수의 개수와 덧셈
+# https://programmers.co.kr/learn/courses/30/lessons/77884
+
+# def div(num):
+#     if num == 1:
+#         return 1
+#     else:
+#         count = 0
+#         for i in range(2,int(num/2)+1):
+#             if num % i == 0:
+#                 count += 1
+#         return count
+
+# def solution(left, right):
+#     result = 0
+#     for num in range(left, right+1):
+#         temp = div(num)
+#         if temp%2 == 0:
+#             result += num
+#         else:
+#             result -= num
+            
+#     return result
+
+
+
+# 3진법 뒤집기
+# https://programmers.co.kr/learn/courses/30/lessons/68935
+
+# n = 45
+# temp = ''
+# answer = 0
+# while n:
+#     temp += str(n%3)
+#     n //= 3
+        
+# for i in range(len(temp)):
+#     answer += int(temp[i])*(3**(len(temp)-1-i))
+
+# print(answer)
+
+
+
+# 2016년
+# https://programmers.co.kr/learn/courses/30/lessons/12901
+
+# a = 5
+# b = 24
+# days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+# month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+# count = 0
+
+# for i in range(a-1):
+#     count += month[i]
+
+# count = (count+(b-1))%7
+# print(days[-2+count])
+
+
+
+# 최소직사각형
+# https://programmers.co.kr/learn/courses/30/lessons/86491
+
+# sizes = [[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]
+# arr_sizes = []
+# for i in sizes:
+#     if i[0] > i[1]:
+#         arr_sizes.append([i[0], i[1]])
+#     else:
+#         arr_sizes.append([i[1], i[0]])
+# x = sorted(arr_sizes)
+# y = sorted(arr_sizes, key=lambda x:x[1])
+# print(x[-1][0]*y[-1][1])
+
+
+
+# 나머지가 1이 되는 수 찾기
+# https://programmers.co.kr/learn/courses/30/lessons/87389
+
+# def solution(n):
+#     for x in range(1,n):
+#         if n%x == 1:
+#             return x
+
+
+
+# 부족한 금액 계산하기
+# https://programmers.co.kr/learn/courses/30/lessons/82612
+
+# price = 3
+# money = 20
+# count = 4
+# n = 1
+# total = 0
+# while count:
+#     total += price*n
+#     n += 1
+#     count -= 1
+
+# if total > money:
+#     print(total-money)
+# else:
+#     print(0)
+
+
+
+# 비밀지도
+# https://programmers.co.kr/learn/courses/30/lessons/17681
+
+n = 5
+arr1 = [9, 20, 28, 18, 11]
+arr2 = [30, 1, 21, 17, 28]
+answer = []
+def notation(num, n):
+    result = ''
+    while num:
+        result = str(num%2) + result
+        num //= 2
+    
+    if len(result) < n:
+        result = '0'*(n-len(result)) + result
+    
+    return result
+
+for i in range(n):
+    x = notation(arr1[i], n)
+    y = notation(arr2[i], n)
+    temp = ''
+    print(x, y)
+    for j in range(n):
+        if x[j] == '0' and y[j] == '0':
+            temp += ' '
+        else:
+            temp += '#'
+    answer.append(temp)
+
+print(answer)
+
+
