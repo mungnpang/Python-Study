@@ -1629,33 +1629,191 @@
 # 비밀지도
 # https://programmers.co.kr/learn/courses/30/lessons/17681
 
-n = 5
-arr1 = [9, 20, 28, 18, 11]
-arr2 = [30, 1, 21, 17, 28]
-answer = []
-def notation(num, n):
-    result = ''
-    while num:
-        result = str(num%2) + result
-        num //= 2
+# n = 5
+# arr1 = [9, 20, 28, 18, 11]
+# arr2 = [30, 1, 21, 17, 28]
+# answer = []
+# def notation(num, n):
+#     result = ''
+#     while num:
+#         result = str(num%2) + result
+#         num //= 2
     
-    if len(result) < n:
-        result = '0'*(n-len(result)) + result
+#     if len(result) < n:
+#         result = '0'*(n-len(result)) + result
     
-    return result
+#     return result
 
-for i in range(n):
-    x = notation(arr1[i], n)
-    y = notation(arr2[i], n)
-    temp = ''
-    print(x, y)
-    for j in range(n):
-        if x[j] == '0' and y[j] == '0':
-            temp += ' '
-        else:
-            temp += '#'
-    answer.append(temp)
+# for i in range(n):
+#     x = notation(arr1[i], n)
+#     y = notation(arr2[i], n)
+#     temp = ''
+#     for j in range(n):
+#         if x[j] == '0' and y[j] == '0':
+#             temp += ' '
+#         else:
+#             temp += '#'
+#     answer.append(temp)
 
-print(answer)
+# print(answer)
 
 
+
+# 가운데 글자 가져오기
+# https://programmers.co.kr/learn/courses/30/lessons/12903
+
+# def solution(s):
+#     target = int(len(s)/2)
+#     if len(s)%2 == 0:
+#         return s[target-1:target+1]
+#     else:
+#         return s[target]
+
+
+
+# [1차] 다트 게임
+# https://programmers.co.kr/learn/courses/30/lessons/17682
+
+# dr = '1D#2S*3S'
+# dr_list = []
+# temp = 0
+# for i in dr:
+#     try:
+#         if i != '0':
+#             temp += int(i)
+#         else:
+#             temp *= 10
+#     except:
+#         if i in ['S', 'D', 'T']:
+#             if i == 'D':
+#                 temp **= 2
+#             elif i == 'T':
+#                 temp **= 3
+#             dr_list.append(temp)
+#             temp = 0
+#         if i == '*':
+#             if len(dr_list) == 1:
+#                 dr_list[0] *= 2
+#             else:
+#                 dr_list[-2] *= 2
+#                 dr_list[-1] *= 2
+#         elif i == '#':
+#             dr_list[-1] *= -1
+        
+# print(sum(dr_list))
+
+
+
+# 같은 숫자는 싫어
+# https://programmers.co.kr/learn/courses/30/lessons/12906
+
+# arr = [1,1,3,3,0,1,1]
+# answer = []
+# for i in arr:
+#     if len(answer) == 0:
+#         answer.append(i)
+#     else:
+#         if i == answer[-1]:
+#             continue
+#         else:
+#             answer.append(i)
+
+# print(answer)
+
+
+
+# 나누어 떨어지는 숫자 배열
+# https://programmers.co.kr/learn/courses/30/lessons/12910
+
+# arr = [5, 9, 7, 10]
+# divisor = 5
+
+# def solution(arr, divisor):
+#     answer = []
+#     for i in arr:
+#         if i%divisor == 0:
+#             answer.append(i)
+
+#     if len(answer) == 0:
+#         return -1
+#     else:
+#         answer.sort()
+#         return answer
+
+# print(solution([5, 9, 7, 10], 5))
+
+
+
+# 두 정수 사이의 합
+# https://programmers.co.kr/learn/courses/30/lessons/12912
+
+# def solution(a, b):
+#     answer = 0
+#     if a > b:
+#         a, b = b, a
+#     elif a == b:
+#         return a
+
+#     for i in range(a, b+1):
+#         answer += i
+    
+#     return answer
+
+
+
+# 문자열 내 마음대로 정렬하기
+# https://programmers.co.kr/learn/courses/30/lessons/12915
+
+# strings = ["abce", "abcd", "cdx"]
+# n = 2
+# strings.sort()
+# answer = sorted(strings, key=lambda x:x[1])
+# print(answer)
+
+
+
+# 문자열 내 p와 y의 개수
+# https://programmers.co.kr/learn/courses/30/lessons/12916
+
+# s = "Pyyp"
+# if s.lower().count('p') == s.lower().count('y'):
+#     print('true')
+# else:
+#     print('false')
+
+
+
+# 문자열 내림차순으로 배치하기
+# https://programmers.co.kr/learn/courses/30/lessons/12917
+
+# def solution(s):
+#     temp = list(s)
+#     temp.sort(reverse=True)
+#     return ''.join(temp)
+
+
+
+# 문자열 다루기 기본
+# https://programmers.co.kr/learn/courses/30/lessons/12918
+
+# s = "a234"
+# def solution(s):
+#     try:
+#         int(s)
+#     except:
+#         return False
+#     return len(s) == 4 or len(s) == 6
+
+# print(solution(s))
+
+
+
+# 서울에서 김서방 찾기
+# https://programmers.co.kr/learn/courses/30/lessons/12919
+
+# seoul = ["Jane", "Kim"]
+# target = seoul.index('Kim')
+# print(f'김서방은 {target}에 있다')
+
+s = "Zbcdefg"
+print(''.join(sorted(s, reverse=True)))
