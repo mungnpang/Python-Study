@@ -1787,9 +1787,7 @@
 # https://programmers.co.kr/learn/courses/30/lessons/12917
 
 # def solution(s):
-#     temp = list(s)
-#     temp.sort(reverse=True)
-#     return ''.join(temp)
+#     return ''.join(sorted(s, reverse=True))
 
 
 
@@ -1815,5 +1813,159 @@
 # target = seoul.index('Kim')
 # print(f'김서방은 {target}에 있다')
 
-s = "Zbcdefg"
-print(''.join(sorted(s, reverse=True)))
+
+
+# 약수의 합
+# https://programmers.co.kr/learn/courses/30/lessons/12928
+
+# n = 12
+# answer = 0
+# for i in range(1, int(n/2)+1):
+#     if n%i == 0:
+#         answer += i
+# print(answer+n)
+
+
+
+# 문자열을 정수로 바꾸기
+# https://programmers.co.kr/learn/courses/30/lessons/12925
+
+# s = '-1234'
+# print(int(s))
+
+
+
+# 수박수박수박수박수박수?
+# https://programmers.co.kr/learn/courses/30/lessons/12922
+
+# A1)
+# n = 4
+# answer = ''
+# for i in range(n):
+#     if i%2 == 0:
+#         answer += '수'
+#     else:
+#         answer += '박'
+# print(answer)
+
+# A2) #n의 제한조건이 10000이라는 점을 이용
+# n = 4
+# answer = '수박'*5000
+# print(answer[:n])
+
+
+# 소수 찾기
+# https://programmers.co.kr/learn/courses/30/lessons/12921
+
+# max_num = 1000000
+# table = [False, False]+[True]*999999
+# m = int(max_num ** 0.5)
+# for i in range(2, m+1):
+#     if table[i]:
+#         for j in range(2*i, max_num+1, i):
+#             table[j] = False
+
+# n = 5
+# count = 0
+# for i in range(2,n+1):
+#     if table[i] == True:
+#         count += 1
+
+# print(count)
+
+
+
+# 자릿수 더하기
+# https://programmers.co.kr/learn/courses/30/lessons/12931
+
+# N = 987
+# n = str(N)
+# answer = 0
+# for i in n:
+#     answer += int(i)
+# print(answer)
+
+
+
+# 자연수 뒤집어 배열로 만들기
+# https://programmers.co.kr/learn/courses/30/lessons/12932
+
+# def solution(n):
+#     return list(reversed(list(map(int, str(n)))))
+
+
+
+# 정수 내림차순으로 배치하기
+# https://programmers.co.kr/learn/courses/30/lessons/12933
+
+# def solution(n):
+#     return int(''.join(sorted(str(n), reverse=True)))
+
+
+
+# 정수 제곱근 판별
+# https://programmers.co.kr/learn/courses/30/lessons/12934
+
+# def solution(n):
+#     for i in range(1, int(n**0.5)+1):
+#         if i*i == n:
+#             return (i+1)**2
+#     return -1
+
+
+
+# 제일 작은 수 제거하기
+# https://programmers.co.kr/learn/courses/30/lessons/12935
+
+# def solution(arr):
+#     arr.remove(min(arr))
+#     if not arr:
+#         arr.append(-1)
+        
+#     return arr
+
+
+
+# 짝수와 홀수
+# https://programmers.co.kr/learn/courses/30/lessons/12937
+
+# def solution(num):
+#     if num%2 == 0:
+#         return 'Even'
+#     else:
+#         return 'Odd'
+
+
+
+# 최대공약수와 최소공배수
+# https://programmers.co.kr/learn/courses/30/lessons/12940
+
+# def solution(n, m):
+#     def gcd (a, b):
+#         while b > 0:
+#             a, b = b, a%b
+#         return a
+
+#     def lcm (a,b):
+#         return a * b / gcd(a,b)
+        
+#     answer = []
+#     answer.append(gcd(n,m))
+#     answer.append(lcm(n,m))
+    
+#     return answer
+
+
+
+# 콜라츠 추측
+# https://programmers.co.kr/learn/courses/30/lessons/12943
+
+n = 6
+cnt = 0
+while n != 1:
+    if n%2 == 0:
+        n /= 2
+    else:
+        n = n*3 +1
+    cnt += 1
+print(cnt)
